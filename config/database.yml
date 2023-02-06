@@ -84,3 +84,4 @@ production:
   database: Amazon_Clone_production
   username: Amazon_Clone
   password: <%= ENV["AMAZON_CLONE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
