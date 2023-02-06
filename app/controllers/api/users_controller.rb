@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
 
     wrap_parameters include: User.attribute_names + ['password']
 
@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     before_action :require_logged_in, only: [:show]
     
     def show
-        @user = current_user
+        @user = User.find(params[:id])
         render json: @user
     end
 

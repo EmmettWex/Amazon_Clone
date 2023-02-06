@@ -5,10 +5,9 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
 
     validates :name, :password_digest, presence: true
-    validates :email, :session_token, presence: true, uniquness: true
+    validates :email, :session_token, presence: true, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
     
-
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         # has_secure_password gives us the authenticate method

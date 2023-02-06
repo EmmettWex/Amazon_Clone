@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
 
     before_action :require_logged_in, only: [:create]
     before_action :require_logged_in, only: [:destroy]
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        username = params[:email]
+        email = params[:email]
         password = params[:password]
         @user = User.find_by_credentials(email, password)
         if @user
