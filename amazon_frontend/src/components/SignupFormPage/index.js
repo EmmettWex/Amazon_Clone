@@ -60,7 +60,7 @@ const SignupFormPage = () => {
             <label>Your name
                 <input
                     type="text"
-                    value={nameSetter}
+                    value={name}
                     onChange={(e) => {
                         e.preventDefault();
                         setName(e.target.value);
