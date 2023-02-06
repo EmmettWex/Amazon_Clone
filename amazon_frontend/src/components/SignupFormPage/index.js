@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './SignupForm.css';
+import logo from '../../assets/images/amazon_logo.png';
 
 const SignupFormPage = () => {
     const dispatch = useDispatch();
@@ -32,7 +33,7 @@ const SignupFormPage = () => {
             return dispatch(sessionActions.signup({ name, email, password }))
                 .catch(async (response) => {
                     let data;
-                    try {
+                    try { 
                         data = await response.clone().json();
                     } catch {
                         data = await response.text();
@@ -47,62 +48,78 @@ const SignupFormPage = () => {
                     }
                 });
         }
-        return setErrors()
+        return setErrors();
     }
 
     if (sessionUser) return <Redirect to="/" />;
 
     return (
-        <form onSubmit={handleSubmit}>
-            <ul>{errors.map(error => <li key={error}>{error}</li>)}</ul>
-            <div>logo here</div>
-            <h2>Create account</h2>
-            <label>Your name
-                <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => {
-                        e.preventDefault();
-                        setName(e.target.value);
-                    }}
-                    required
-                />
-            </label>
-            <label>Email
-                <input
-                    type="text"
-                    value={email}
-                    onChange={(e) => {
-                        e.preventDefault();
-                        setEmail(e.target.value);
-                    }}
-                    required
-                />
-            </label>
-            <label>Password
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => {
-                        e.preventDefault();
-                        setPassword(e.target.value);
-                    }}
-                    required
-                />
-            </label>
-            <label>Re-enter password
-                <input
-                    type="password"
-                    value={confirmPassword}
-                    onChange={(e) => {
-                        e.preventDefault();
-                        setConfirmPassword(e.target.value);
-                    }}
-                    required
-                />
-            </label>
-            <button type="submit">Continue</button>
-        </form>
+        <div className="section-a">
+            <div id="logo">
+                <img id="sign-up-logo" src={logo}></img>
+            </div>
+            <div id="wrapping-form" className="sign-up-box-section-a">
+                <form onSubmit={handleSubmit}>
+                    <h1>Create account</h1>
+                    <div id="name-input" className="input-field">
+                        <label>Your name</label>
+                            <input
+                                type="text"
+                                placeholder="First and last name"
+                                value={name}
+                                onChange={(e) => {
+                                    e.preventDefault();
+                                    setName(e.target.value);
+                                }}
+                                required
+                            />
+                    </div>
+                    <div id="email-input" className="input-field">
+                        <label>Email
+                            <input
+                                type="text"
+                                value={email}
+                                onChange={(e) => {
+                                    e.preventDefault();
+                                    setEmail(e.target.value);
+                                }}
+                                required
+                            />
+                        </label>
+                    </div>
+                    <div id="password-input" className="input-field">
+                        <label>Password
+                            <input
+                                type="password"
+                                placeholder="At least 6 characters"
+                                value={password}
+                                onChange={(e) => {
+                                    e.preventDefault();
+                                    setPassword(e.target.value);
+                                }}
+                                required
+                            />
+                        </label>
+                    </div>
+                    <div id="password-confirm-input" className="input-field">
+                        <label>Re-enter password
+                            <input
+                                type="password"
+                                value={confirmPassword}
+                                onChange={(e) => {
+                                    e.preventDefault();
+                                    setConfirmPassword(e.target.value);
+                                }}
+                                required
+                            />
+                        </label>
+                    </div>
+                    <div id="button">
+                        <button type="submit">Continue</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     )
 }
 

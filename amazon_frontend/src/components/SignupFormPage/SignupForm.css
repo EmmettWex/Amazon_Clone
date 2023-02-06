@@ -1,0 +1,90 @@
+/* Div section here */
+
+.section-a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 723.91px;
+    padding: 14px 18px;
+}
+
+.sign-up-box-section-a {
+    width: 310px;
+    height: 559.6px;
+    padding: 14px 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+}
+
+.input-field {
+    display: block;
+    margin-bottom: 14px;
+}
+
+#logo {
+    margin-bottom: 18px;    
+}
+
+/* h1 styling below */
+
+h1 {
+    font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: 10px!important;
+}
+
+/* label styling below */
+
+label {
+    font-weight: 900;
+    padding: 0px 0px 2px 2px;
+}
+
+/* input styling below */
+
+input {
+    width: 296px;
+    height: 23px;
+    padding: 3px 7px;
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+}
+
+/* logo styling here */
+
+#sign-up-logo {
+    width: 103px;
+    height: 31px;
+}
+
+/* button styling here */
+
+button {
+    width: 312px;
+    height: 29px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    border: 1;
+    outline: 0;
+    opacity: .75;
+    background-color: transparent;
+    background: #ffce51;
+    border-color: #af9e71 #af9e71 #af9e71 #af9e71;
+}
+
+button:hover {
+    cursor: pointer;
+    background: #f0c14b;
+}
+
+button:active {
+    background: #e7a500;
+    box-shadow: 0 0 5px #6e4f00;
+}
+
+img:hover {
+    cursor: pointer;
+}
