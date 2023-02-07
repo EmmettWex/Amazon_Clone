@@ -1,42 +1,118 @@
 /* Div section here */
 
-.section-a {
+.login-section-a {
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 723.91px;
     padding: 14px 18px;
 }
 
-.sign-up-box-section-a {
+.login-error-box {
+    width: 348px;
+    height: 74.33px;
+    margin-bottom: 14px;
+    border: 1px solid #c40000;
+    border-radius: 4px;
+    background-color: #f9f0f0;
+}
+
+.login-error-box-interior {
+    display: flex;
+    width: 340px;
+    height: 66.33px;
+    z-index: 1;
+    background-color: white;
+    margin: 4px 4px;
+    border-radius: 2px;
+}
+
+.login-alert {
+    width: 30px;
+    height: 27px;
+    margin-top: 5px;
+    margin-left: 13px;
+}
+
+.login-error-messages {
+    padding-left: 20px;
+    /* display: flex; */
+    align-items: center;
+}
+
+.login-error-message-one {
+    font-weight: 525;
+    font-size: 18px;
+    color:#c40000;
+    margin-top: 10px;
+}
+
+.login-error-message-two {
+    font-weight: 525;
+    font-size: 14px;
+    color: black;
+    margin-top: 10px;
+}
+
+.login-wrapper {
+    width: 348px;
+}
+
+.login-box-section-a {
     width: 310px;
     padding: 14px 18px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     border: 1px solid #d5d5d5;
     border-radius: 4px;
+    margin-bottom: 24px;
 }
 
-.input-field {
+.login-input-field {
     display: block;
     margin-bottom: 14px;
 }
 
-#logo {
+#login-logo-div {
     margin-bottom: 18px;
 }
 
-.below-button {
+.login-below-button {
     font-size: 12px;
-    margin-bottom: 26px;
     height: 36px;
     line-height: 1.5;
 }
 
-#spacer {
+#login-spacer {
     height: 36px;
     border-bottom: 1px solid rgb(206, 205, 205);
+}
+
+.login-belowForm-divider {
+    text-align: center;
+    width: 100%;
+}
+
+.login-divider-line {
+    width: 100%;
+    background-color: transparent;
+    height: 1px;
+    border-top: 1px solid #e7e7e7;
+    top: 50%;
+    margin-top: -1px;
+    z-index: 1;
+}
+
+.login-belowForm-divider>h2 {
+    font-size: 12px;
+    color: #767676;
+    background: white;
+    padding: 4px;
+    font-weight: 400;
+    z-index: 2;
+    display: inline-block;
+    position: relative;
+    bottom: 12px;
 }
 
 .sign-in-link {
@@ -47,7 +123,7 @@
 
 /* h1 styling below */
 
-.signup-form>h1 {
+.login-form>h1 {
     font-size: 28px;
     font-weight: 400;
     margin-top: 0px;
@@ -56,14 +132,14 @@
 
 /* label styling below */
 
-.signup-form>label {
+.login-label {
     font-weight: 900;
     padding: 0px 0px 2px 2px;
 }
 
 /* input styling below */
 
-.signup-input {
+.login-input {
     width: 296px;
     height: 23px;
     padding: 3px 7px;
@@ -74,14 +150,14 @@
 
 /* logo styling here */
 
-#sign-up-logo {
+#login-logo {
     width: 103px;
     height: 31px;
 }
 
 /* button styling here */
 
-.signup-button {
+.login-button {
     width: 312px;
     height: 29px;
     padding: 1px 6px;
@@ -92,22 +168,27 @@
     background-color: transparent;
     background: #ffce51;
     border-color: #af9e71 #af9e71 #af9e71 #af9e71;
-    margin-bottom: 26px;
+    margin-bottom: 14px;
 }
 
-.signup-button:hover {
+.login-createAccount {
+    width: 348px;
+    height: 29px;
+}
+
+.login-button:hover {
     cursor: pointer;
     background: #f0c14b;
 }
 
-.signup-button:active {
+.login-button:active {
     background: #e7a500;
     box-shadow: 0 0 5px #6e4f00;
 }
 
 /* img styling below */
 
-#sign-up-logo:hover {
+#login-logo:hover {
     cursor: pointer;
 }
 

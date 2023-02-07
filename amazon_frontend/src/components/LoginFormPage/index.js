@@ -3,6 +3,9 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import './LoginForm.css';
+import logo from '../../assets/images/amazon_logo.png';
+import exclamation from '../../assets/images/exclamation.png'
+import alert from '../../assets/images/alert.png'
 
 const LoginFormPage = () => {
     const dispatch = useDispatch();
@@ -35,35 +38,145 @@ const LoginFormPage = () => {
             });
     }
 
+    const demoLogIn = e => {
+        e.preventDefault();
+        return dispatch(sessionActions.login(
+            {
+                email: 'emmett.wechsler11@gmail.com',
+                password: 'hello123'
+            }
+        )
+        );
+    }
+
     if (sessionUser) return <Redirect to="/" />;
 
+    let emailError = null;
+    let passwordError = null;
+    let loginErrorBox = false;
+
+    
+    if (errors[0]) {
+        if (email === '') {
+            emailError = 'Enter your email'
+        } else {
+            emailError = null;
+        }
+
+        if (password === '') {
+            passwordError = 'Enter your password'
+        } else {
+            passwordError = null;
+        }
+
+        if ( email !== '' || password !== '') {
+            console.log("hello")
+            loginErrorBox = true;
+        } else {
+            loginErrorBox = false;
+        }
+    }
+
+    const emailErrorChecker = () => {
+        if (emailError) {
+            return (
+                <p className="errors">
+                    <img className="exclamation" src={exclamation}></img>
+                    {emailError}
+                </p>
+            )
+        }
+    }
+
+    const passwordErrorChecker = () => {
+        if (passwordError) {
+            return (
+                <p className="errors">
+                    <img className="exclamation" src={exclamation}></img>
+                    {passwordError}
+                </p>
+            )
+        }
+    }
+
+    const loginErrorBoxChecker = () => {
+        if (loginErrorBox) {
+            return (
+                <div className="login-error-box">
+                    <div className="login-error-box-interior">
+                        <img className="login-alert" src={alert}></img>
+                        <div className="login-error-messages">
+                            <p className="login-error-message-one">
+                                There was a problem
+                            </p>
+                            <p className="login-error-message-two">
+                                Your email or password is incorrect
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+    }
+
     return (
-        <form onSubmit={handleSubmit}>
-            <ul>
-                {
-                    errors.map((error) => {
-                        return <li key={error}>{error}</li>
-                    })
-                }
-            </ul>
-            <label>Email
-                <input
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                />
-            </label>
-            <label>Password
-                <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                />
-            </label>
-            <button type="submit">Log In</button>
-        </form>
+        <div className="login-section-a">
+            <div id="login-logo-div">
+                <img id="login-logo" src={logo}></img>
+            </div>
+            {loginErrorBoxChecker()}
+            <div className="login-wrapper">
+                <div className="login-box-section-a">
+                    <form className="login-form">
+                        <h1>Sign In</h1>
+                        <div className="login-input-field">
+                            <label className="login-label">Email</label>
+                            <input
+                                className="login-input"
+                                type="text"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                            {emailErrorChecker()}
+                        </div>
+                        <div className="login-input-field">
+                            <label className="login-label">Password</label>
+                            <input
+                                className="login-input"
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                            {passwordErrorChecker()}
+                        </div>
+                        <div>
+                            <button className="login-button" onClick={handleSubmit}>Sign In</button>
+                        </div>
+                        <div>
+                            <button className="login-button" onClick={demoLogIn}>Demo Sign In</button>
+                        </div>
+                    </form>
+                    <div className="login-below-button">
+                        By clicking the following link you will be redirected to my Github:
+                        <a className="link" href="https://github.com/EmmettWex" target="_blank"> Github</a>
+                    </div>
+                </div>
+                {/* put the below form section here */}
+                <div className="login-belowForm-divider">
+                    <div className="login-divider-line"></div>
+                    <h2>New to Amazon OSRS?</h2>
+                </div>
+                <div>
+                    <Link to="/signup">
+                        <button className="login-createAccount">
+                            Create your Amazon OSRS account
+                        </button>
+                    </Link>
+                </div>
+            </div>
+        </div>
     )
 }
 

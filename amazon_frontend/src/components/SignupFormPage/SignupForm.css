@@ -1,6 +1,6 @@
 /* Div section here */
 
-.section-a {
+.signup-section-a {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -18,23 +18,23 @@
     border-radius: 4px;
 }
 
-.input-field {
+.signup-input-field {
     display: block;
     margin-bottom: 14px;
 }
 
-#logo {
-    margin-bottom: 18px;    
+#signup-logo-div {
+    margin-bottom: 18px;
 }
 
-.below-button {
+.signup-below-button {
     font-size: 12px;
     margin-bottom: 26px;
     height: 36px;
     line-height: 1.5;
 }
 
-#spacer {
+#signup-spacer {
     height: 36px;
     border-bottom: 1px solid rgb(206, 205, 205);
 }
@@ -47,16 +47,16 @@
 
 /* h1 styling below */
 
-.signup-form > h1 {
+.signup-form>h1 {
     font-size: 28px;
     font-weight: 400;
     margin-top: 0px;
-    margin-bottom: 10px!important;
+    margin-bottom: 10px !important;
 }
 
 /* label styling below */
 
-.signup-form > label {
+.signup-label {
     font-weight: 900;
     padding: 0px 0px 2px 2px;
 }

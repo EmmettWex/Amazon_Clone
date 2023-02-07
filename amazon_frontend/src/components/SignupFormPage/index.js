@@ -43,7 +43,6 @@ const SignupFormPage = () => {
         return setErrors(['Passwords must match']);
     }
 
-    console.log(errors)
     if (sessionUser) return <Redirect to="/" />;
 
     // Checking for errors here and creating error checker functions
@@ -65,7 +64,6 @@ const SignupFormPage = () => {
     }
 
     const nameErrorChecker = () => {
-        console.log(nameError);
         if (nameError) {
             return (
                 <p className="errors">
@@ -116,20 +114,27 @@ const SignupFormPage = () => {
         }
     }
 
-    const signInHandler = e => {
-        // render the sign in page here
+    const demoLogIn = e => {
+        e.preventDefault();
+        return dispatch(sessionActions.login(
+            {
+                email: 'emmett.wechsler11@gmail.com',
+                password: 'hello123'
+            }
+            )
+        );
     }
 
     return (
-        <div className="section-a">
-            <div id="logo">
+        <div className="signup-section-a">
+            <div id="signup-logo-div">
                 <img id="sign-up-logo" src={logo}></img>
             </div>
-            <div id="wrapping-form" className="sign-up-box-section-a">
+            <div className="sign-up-box-section-a">
                 <form className="signup-form">
                     <h1>Create account</h1>
-                    <div id="name-input" className="input-field">
-                        <label>Your name</label>
+                    <div className="signup-input-field">
+                        <label className="signup-label">Your name</label>
                             <input
                                 className="signup-input"
                                 type="text"
@@ -143,8 +148,8 @@ const SignupFormPage = () => {
                             />
                             {nameErrorChecker()}
                     </div>
-                    <div id="email-input" className="input-field">
-                        <label>Email</label>
+                    <div className="signup-input-field">
+                        <label className="signup-label">Email</label>
                         <input
                             className="signup-input"
                             type="text"
@@ -157,8 +162,8 @@ const SignupFormPage = () => {
                         />
                         {emailErrorChecker()}
                     </div>
-                    <div id="password-input" className="input-field">
-                        <label>Password</label>
+                    <div className="signup-input-field">
+                        <label className="signup-label">Password</label>
                         <input
                             className="signup-input"
                             type="password"
@@ -172,8 +177,8 @@ const SignupFormPage = () => {
                         />
                         {passwordErrorChecker()}
                     </div>
-                    <div id="password-confirm-input" className="input-field">
-                        <label>Re-enter password</label>
+                    <div className="signup-input-field">
+                        <label className="signup-label">Re-enter password</label>
                         <input
                             className="signup-input"
                             type="password"
@@ -186,15 +191,18 @@ const SignupFormPage = () => {
                         />
                         {passwordConfirmErrorChecker()}
                     </div>
-                    <div id="button">
+                    <div>
                         <button className="signup-button" onClick={handleSubmit}>Continue</button>
                     </div>
+                    <div>
+                        <button className="signup-button" onClick={demoLogIn}>Demo Sign In</button>
+                    </div>
                 </form>
-                <div class="below-button">
+                <div className="signup-below-button">
                     By clicking the following link you will be redirected to my Github: 
                     <a className="link" href="https://github.com/EmmettWex" target="_blank"> Github</a>
                 </div>
-                <div id="spacer"></div>
+                <div id="signup-spacer"></div>
                 <div className="sign-in-link">
                     Already have an account?
                     <Link to="/login" className="link"> Sign in</Link>
