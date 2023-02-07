@@ -5,7 +5,12 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
 
     validates :name, :password_digest, presence: true
-    validates :email, :session_token, presence: true, uniqueness: true
+    validates :email,
+        length: { in: 1..255 },
+        uniqueness: true,
+        format: { with: URI::MailTo::EMAIL_REGEXP,
+        message: 'Wrong format' }
+    validates :session_token, presence: true, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
     
     def self.find_by_credentials(email, password)

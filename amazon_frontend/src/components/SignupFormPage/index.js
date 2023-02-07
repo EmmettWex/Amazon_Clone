@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './SignupForm.css';
 import logo from '../../assets/images/amazon_logo.png';
@@ -14,14 +14,6 @@ const SignupFormPage = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errors, setErrors] = useState([]);
-
-    const nameSetter = () => {
-        if (name === '') {
-            return 'First and last name';
-        } else {
-            return name;
-        }
-    }
 
     // will likely need a password setter function as well in order to get the "at least 6 characters"
 
@@ -57,12 +49,15 @@ const SignupFormPage = () => {
     // Checking for errors here and creating error checker functions
     let nameError;
     let emailError;
+    let emailFormatError;
     let passwordError;
     let passwordConfirmError;
 
     if (errors[0]) {
         nameError = errors[0].includes("Name can't be blank") ? 'Enter your name' : null;
-        emailError = errors[0].includes("Email can't be blank") ? 'Enter your email' : null;
+        emailFormatError = errors[0].includes("Email Wrong format") ?
+            'Wrong or invalid email adress. Please correct and try again' : null;
+        emailError = errors[0].includes("Email is too short (minimum is 1 character)") ? 'Enter your email' : null;
         passwordError = errors[0].includes("Password can't be blank") ||
             errors[0].includes("Password is too short (minimum is 6 characters)") ?
             'Minimum 6 characters required' : null ;
@@ -74,7 +69,7 @@ const SignupFormPage = () => {
         if (nameError) {
             return (
                 <p className="errors">
-                    <img class="exclamation" src={exclamation}></img>
+                    <img className="exclamation" src={exclamation}></img>
                     {nameError}
                 </p>
             )
@@ -85,8 +80,15 @@ const SignupFormPage = () => {
         if (emailError) {
             return (
                 <p className="errors">
-                    <img class="exclamation" src={exclamation}></img>
+                    <img className="exclamation" src={exclamation}></img>
                     {emailError}
+                </p>
+            )
+        } else if (emailFormatError) {
+            return (
+                <p className="errors">
+                    <img className="exclamation" src={exclamation}></img>
+                    {emailFormatError}
                 </p>
             )
         }
@@ -96,7 +98,7 @@ const SignupFormPage = () => {
         if (passwordError) {
             return (
                 <p className="errors">
-                    <img class="exclamation" src={exclamation}></img>
+                    <img className="exclamation" src={exclamation}></img>
                     {passwordError}
                 </p>
             )
@@ -107,11 +109,15 @@ const SignupFormPage = () => {
         if (passwordConfirmError) {
             return (
                 <p className="errors">
-                    <img class="exclamation" src={exclamation}></img>
+                    <img className="exclamation" src={exclamation}></img>
                     {passwordConfirmError}
                 </p>
             )
         }
+    }
+
+    const signInHandler = e => {
+        // render the sign in page here
     }
 
     return (
@@ -120,11 +126,12 @@ const SignupFormPage = () => {
                 <img id="sign-up-logo" src={logo}></img>
             </div>
             <div id="wrapping-form" className="sign-up-box-section-a">
-                <form>
+                <form className="signup-form">
                     <h1>Create account</h1>
                     <div id="name-input" className="input-field">
                         <label>Your name</label>
                             <input
+                                className="signup-input"
                                 type="text"
                                 placeholder="First and last name"
                                 value={name}
@@ -139,6 +146,7 @@ const SignupFormPage = () => {
                     <div id="email-input" className="input-field">
                         <label>Email</label>
                         <input
+                            className="signup-input"
                             type="text"
                             value={email}
                             onChange={(e) => {
@@ -152,6 +160,7 @@ const SignupFormPage = () => {
                     <div id="password-input" className="input-field">
                         <label>Password</label>
                         <input
+                            className="signup-input"
                             type="password"
                             placeholder="At least 6 characters"
                             value={password}
@@ -166,6 +175,7 @@ const SignupFormPage = () => {
                     <div id="password-confirm-input" className="input-field">
                         <label>Re-enter password</label>
                         <input
+                            className="signup-input"
                             type="password"
                             value={confirmPassword}
                             onChange={(e) => {
@@ -177,9 +187,18 @@ const SignupFormPage = () => {
                         {passwordConfirmErrorChecker()}
                     </div>
                     <div id="button">
-                        <button onClick={handleSubmit}>Continue</button>
+                        <button className="signup-button" onClick={handleSubmit}>Continue</button>
                     </div>
                 </form>
+                <div class="below-button">
+                    By clicking the following link you will be redirected to my Github: 
+                    <a className="link" href="https://github.com/EmmettWex" target="_blank"> Github</a>
+                </div>
+                <div id="spacer"></div>
+                <div className="sign-in-link">
+                    Already have an account?
+                    <Link to="/login" className="link"> Sign in</Link>
+                </div>
             </div>
         </div>
     )

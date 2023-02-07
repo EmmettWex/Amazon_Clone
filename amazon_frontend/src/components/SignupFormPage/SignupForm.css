@@ -11,7 +11,6 @@
 
 .sign-up-box-section-a {
     width: 310px;
-    height: 559.6px;
     padding: 14px 18px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
@@ -28,9 +27,28 @@
     margin-bottom: 18px;    
 }
 
+.below-button {
+    font-size: 12px;
+    margin-bottom: 26px;
+    height: 36px;
+    line-height: 1.5;
+}
+
+#spacer {
+    height: 36px;
+    border-bottom: 1px solid rgb(206, 205, 205);
+}
+
+.sign-in-link {
+    align-items: flex-end;
+    font-size: 13px;
+    margin-top: 13px;
+}
+
 /* h1 styling below */
 
-h1 {
+.signup-form > h1 {
+    font-size: 28px;
     font-weight: 400;
     margin-top: 0px;
     margin-bottom: 10px!important;
@@ -38,19 +56,20 @@ h1 {
 
 /* label styling below */
 
-label {
+.signup-form > label {
     font-weight: 900;
     padding: 0px 0px 2px 2px;
 }
 
 /* input styling below */
 
-input {
+.signup-input {
     width: 296px;
     height: 23px;
     padding: 3px 7px;
     border: 1px solid #a6a6a6;
     border-radius: 3px;
+    margin-top: 2px;
 }
 
 /* logo styling here */
@@ -62,7 +81,7 @@ input {
 
 /* button styling here */
 
-button {
+.signup-button {
     width: 312px;
     height: 29px;
     padding: 1px 6px;
@@ -73,14 +92,15 @@ button {
     background-color: transparent;
     background: #ffce51;
     border-color: #af9e71 #af9e71 #af9e71 #af9e71;
+    margin-bottom: 26px;
 }
 
-button:hover {
+.signup-button:hover {
     cursor: pointer;
     background: #f0c14b;
 }
 
-button:active {
+.signup-button:active {
     background: #e7a500;
     box-shadow: 0 0 5px #6e4f00;
 }
@@ -101,4 +121,16 @@ button:active {
 .errors {
     font-size: 12px;
     color: #C40000;
+}
+
+/* href link styling */
+
+.link {
+    color: blue;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: rgb(172, 112, 2);
 }
