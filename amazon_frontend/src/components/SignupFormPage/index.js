@@ -26,7 +26,6 @@ const SignupFormPage = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-
         // come back to the errors, this will likely look very different
         if (password === confirmPassword) {
             setErrors([]);
@@ -48,10 +47,59 @@ const SignupFormPage = () => {
                     }
                 });
         }
-        return setErrors();
+        return setErrors(['Passwords must match']);
     }
 
+    console.log(errors)
     if (sessionUser) return <Redirect to="/" />;
+
+    // Checking for errors here and creating error checker functions
+    let nameError;
+    let emailError;
+    let passwordError;
+    let passwordConfirmError;
+
+    if (errors[0]) {
+        nameError = errors[0].includes("Name can't be blank") ? 'Enter your name' : null;
+        emailError = errors[0].includes("Email can't be blank") ? 'Enter your email' : null;
+        passwordError = errors[0].includes("Password can't be blank") ||
+            errors[0].includes("Password is too short (minimum is 6 characters)") ?
+            'Minimum 6 characters required' : null ;
+        passwordConfirmError = errors.includes('Passwords must match') ? 'Passwords must match' : null ;
+    }
+
+    const nameErrorChecker = () => {
+        console.log(nameError);
+        if (nameError) {
+            return (
+                <p className="errors">{nameError}</p>
+            )
+        }
+    }
+
+    const emailErrorChecker = () => {
+        if (emailError) {
+            return (
+                <p className="errors">{emailError}</p>
+            )
+        }
+    }
+
+    const passwordErrorChecker = () => {
+        if (passwordError) {
+            return (
+                <p className="errors">{passwordError}</p>
+            )
+        }
+    }
+
+    const passwordConfirmErrorChecker = () => {
+        if (passwordConfirmError) {
+            return (
+                <p className="errors">{passwordConfirmError}</p>
+            )
+        }
+    }
 
     return (
         <div className="section-a">
@@ -59,7 +107,7 @@ const SignupFormPage = () => {
                 <img id="sign-up-logo" src={logo}></img>
             </div>
             <div id="wrapping-form" className="sign-up-box-section-a">
-                <form onSubmit={handleSubmit}>
+                <form>
                     <h1>Create account</h1>
                     <div id="name-input" className="input-field">
                         <label>Your name</label>
@@ -73,49 +121,50 @@ const SignupFormPage = () => {
                                 }}
                                 required
                             />
+                            {nameErrorChecker()}
                     </div>
                     <div id="email-input" className="input-field">
-                        <label>Email
-                            <input
-                                type="text"
-                                value={email}
-                                onChange={(e) => {
-                                    e.preventDefault();
-                                    setEmail(e.target.value);
-                                }}
-                                required
-                            />
-                        </label>
+                        <label>Email</label>
+                        <input
+                            type="text"
+                            value={email}
+                            onChange={(e) => {
+                                e.preventDefault();
+                                setEmail(e.target.value);
+                            }}
+                            required
+                        />
+                        {emailErrorChecker()}
                     </div>
                     <div id="password-input" className="input-field">
-                        <label>Password
-                            <input
-                                type="password"
-                                placeholder="At least 6 characters"
-                                value={password}
-                                onChange={(e) => {
-                                    e.preventDefault();
-                                    setPassword(e.target.value);
-                                }}
-                                required
-                            />
-                        </label>
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            placeholder="At least 6 characters"
+                            value={password}
+                            onChange={(e) => {
+                                e.preventDefault();
+                                setPassword(e.target.value);
+                            }}
+                            required
+                        />
+                        {passwordErrorChecker()}
                     </div>
                     <div id="password-confirm-input" className="input-field">
-                        <label>Re-enter password
-                            <input
-                                type="password"
-                                value={confirmPassword}
-                                onChange={(e) => {
-                                    e.preventDefault();
-                                    setConfirmPassword(e.target.value);
-                                }}
-                                required
-                            />
-                        </label>
+                        <label>Re-enter password</label>
+                        <input
+                            type="password"
+                            value={confirmPassword}
+                            onChange={(e) => {
+                                e.preventDefault();
+                                setConfirmPassword(e.target.value);
+                            }}
+                            required
+                        />
+                        {passwordConfirmErrorChecker()}
                     </div>
                     <div id="button">
-                        <button type="submit">Continue</button>
+                        <button onClick={handleSubmit}>Continue</button>
                     </div>
                 </form>
             </div>

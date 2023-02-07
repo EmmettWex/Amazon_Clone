@@ -88,3 +88,9 @@ button:active {
 img:hover {
     cursor: pointer;
 }
+
+/* paragraph tags and error handing styling below */
+
+.errors {
+    color: #C40000;
+}
