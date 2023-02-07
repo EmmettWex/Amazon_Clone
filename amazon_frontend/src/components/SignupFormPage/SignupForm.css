@@ -85,12 +85,20 @@ button:active {
     box-shadow: 0 0 5px #6e4f00;
 }
 
-img:hover {
+/* img styling below */
+
+#sign-up-logo:hover {
     cursor: pointer;
+}
+
+.exclamation {
+    height: 13px;
+    width: 14px;
 }
 
 /* paragraph tags and error handing styling below */
 
 .errors {
+    font-size: 12px;
     color: #C40000;
 }

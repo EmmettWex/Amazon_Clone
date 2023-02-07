@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './SignupForm.css';
 import logo from '../../assets/images/amazon_logo.png';
+import exclamation from '../../assets/images/exclamation.png'
 
 const SignupFormPage = () => {
     const dispatch = useDispatch();
@@ -72,7 +73,10 @@ const SignupFormPage = () => {
         console.log(nameError);
         if (nameError) {
             return (
-                <p className="errors">{nameError}</p>
+                <p className="errors">
+                    <img class="exclamation" src={exclamation}></img>
+                    {nameError}
+                </p>
             )
         }
     }
@@ -80,7 +84,10 @@ const SignupFormPage = () => {
     const emailErrorChecker = () => {
         if (emailError) {
             return (
-                <p className="errors">{emailError}</p>
+                <p className="errors">
+                    <img class="exclamation" src={exclamation}></img>
+                    {emailError}
+                </p>
             )
         }
     }
@@ -88,7 +95,10 @@ const SignupFormPage = () => {
     const passwordErrorChecker = () => {
         if (passwordError) {
             return (
-                <p className="errors">{passwordError}</p>
+                <p className="errors">
+                    <img class="exclamation" src={exclamation}></img>
+                    {passwordError}
+                </p>
             )
         }
     }
@@ -96,7 +106,10 @@ const SignupFormPage = () => {
     const passwordConfirmErrorChecker = () => {
         if (passwordConfirmError) {
             return (
-                <p className="errors">{passwordConfirmError}</p>
+                <p className="errors">
+                    <img class="exclamation" src={exclamation}></img>
+                    {passwordConfirmError}
+                </p>
             )
         }
     }
