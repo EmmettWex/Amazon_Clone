@@ -51,7 +51,7 @@
     font-size: 28px;
     font-weight: 400;
     margin-top: 0px;
-    margin-bottom: 10px !important;
+    margin-bottom: 10px;
 }
 
 /* label styling below */
@@ -84,12 +84,8 @@
 .signup-button {
     width: 312px;
     height: 29px;
-    padding: 1px 6px;
     border-radius: 3px;
-    border: 1;
-    outline: 0;
-    opacity: 1;
-    background-color: transparent;
+    border: 1px solid #af9e71;
     background: #FEBD69;
     border-color: #af9e71 #af9e71 #af9e71 #af9e71;
     margin-bottom: 26px;
