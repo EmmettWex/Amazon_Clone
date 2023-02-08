@@ -65,3 +65,8 @@
     cursor: pointer;
     background-color: #ffae45;
 }
+
+.searchbar-submit-button:active {
+    background-color: #e7a500;
+    border: 2px solid #ff9100;
+}

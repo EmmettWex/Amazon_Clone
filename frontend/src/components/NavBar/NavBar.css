@@ -96,3 +96,24 @@
     position: relative;
     top: 3px;
 }
+
+/* button styling below */
+
+.navbar-login-logout {
+    width: 150px;
+    height: 35px;
+    border-radius: 3px;
+    border: 1px solid #af9e71;
+    background: #FEBD69;
+    border-color: #af9e71 #af9e71 #af9e71 #af9e71;
+}
+
+.navbar-login-logout:hover {
+    cursor: pointer;
+    background: #f0c14b;
+}
+
+.navbar-login-logout:active {
+    background-color: #e7a500;
+    border: 2px solid #ff9100;
+}
