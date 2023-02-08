@@ -35,7 +35,8 @@ const LoginFormPage = () => {
                 } else {
                     setErrors([response.statusText])
                 }
-            });
+            }
+        );
     }
 
     const demoLogIn = e => {
@@ -122,7 +123,9 @@ const LoginFormPage = () => {
     return (
         <div className="login-section-a">
             <div id="login-logo-div">
-                <img id="login-logo" src={logo}></img>
+                <Link to="/">
+                    <img id="login-logo" src={logo}></img>
+                </Link>
             </div>
             {loginErrorBoxChecker()}
             <div className="login-wrapper">

@@ -55,7 +55,7 @@ const SignupFormPage = () => {
     if (errors[0]) {
         nameError = errors[0].includes("Name can't be blank") ? 'Enter your name' : null;
         emailFormatError = errors[0].includes("Email Wrong format") ?
-            'Wrong or invalid email adress. Please correct and try again' : null;
+            'Wrong or invalid email address. Please correct and try again' : null;
         emailError = errors[0].includes("Email is too short (minimum is 1 character)") ? 'Enter your email' : null;
         passwordError = errors[0].includes("Password can't be blank") ||
             errors[0].includes("Password is too short (minimum is 6 characters)") ?
@@ -128,7 +128,9 @@ const SignupFormPage = () => {
     return (
         <div className="signup-section-a">
             <div id="signup-logo-div">
-                <img id="sign-up-logo" src={logo}></img>
+                <Link to="/">
+                    <img id="sign-up-logo" src={logo}></img>
+                </Link>
             </div>
             <div className="sign-up-box-section-a">
                 <form className="signup-form">
@@ -144,7 +146,6 @@ const SignupFormPage = () => {
                                     e.preventDefault();
                                     setName(e.target.value);
                                 }}
-                                required
                             />
                             {nameErrorChecker()}
                     </div>
@@ -158,7 +159,6 @@ const SignupFormPage = () => {
                                 e.preventDefault();
                                 setEmail(e.target.value);
                             }}
-                            required
                         />
                         {emailErrorChecker()}
                     </div>
@@ -173,7 +173,6 @@ const SignupFormPage = () => {
                                 e.preventDefault();
                                 setPassword(e.target.value);
                             }}
-                            required
                         />
                         {passwordErrorChecker()}
                     </div>
@@ -187,7 +186,6 @@ const SignupFormPage = () => {
                                 e.preventDefault();
                                 setConfirmPassword(e.target.value);
                             }}
-                            required
                         />
                         {passwordConfirmErrorChecker()}
                     </div>

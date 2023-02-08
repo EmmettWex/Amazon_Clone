@@ -88,9 +88,9 @@
     border-radius: 3px;
     border: 1;
     outline: 0;
-    opacity: .75;
+    opacity: 1;
     background-color: transparent;
-    background: #ffce51;
+    background: #FEBD69;
     border-color: #af9e71 #af9e71 #af9e71 #af9e71;
     margin-bottom: 26px;
 }
@@ -102,7 +102,7 @@
 
 .signup-button:active {
     background: #e7a500;
-    box-shadow: 0 0 5px #6e4f00;
+    box-shadow: 0 0 5px #ff9100;
 }
 
 /* img styling below */
