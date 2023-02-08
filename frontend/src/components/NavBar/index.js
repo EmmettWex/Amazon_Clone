@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import * as sessionActions from '../../store/session';
 import './NavBar.css';
 import logo from '../../assets/images/navbar_logo.png';
 import location from '../../assets/images/navbar_location_marker.png';
@@ -11,8 +12,29 @@ import dropDown from '../../assets/images/dropdown_arrow.png'
 
 
 const NavBar = () => {
+    const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const signInOutButton = sessionUser ? 'Sign out' : 'Sign in' ;
+
+    const navBarButton = () => {
+        
+        if ( sessionUser ) {
+            return (
+                <button className="navbar-login-logout" onClick={(e) => {
+                    dispatch(sessionActions.logout())}}>
+                    {signInOutButton}
+                </button>
+            )
+        } else {
+            return (
+                <Link to='/login'>
+                    <button className="navbar-login-logout">
+                        {signInOutButton}
+                    </button>
+                </Link>
+            )
+        }
+    }
 
     return (
         <div className="navbar-wrapper">
@@ -38,11 +60,7 @@ const NavBar = () => {
                     <img id="arrow" src={dropDown} />
                 </div>
                 {/* this is the end of the section */}
-
-                <button className="navbar-login-logout">
-                    {signInOutButton}
-                </button>
-
+                {navBarButton()}
             </div>
             <NavBarLinks />
         </div>

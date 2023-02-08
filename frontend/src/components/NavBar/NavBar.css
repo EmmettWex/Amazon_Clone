@@ -100,10 +100,11 @@
 /* button styling below */
 
 .navbar-login-logout {
-    width: 150px;
+    width: 115px;
     height: 35px;
     border-radius: 3px;
     border: 1px solid #af9e71;
+    margin-left: 10px;
     background: #FEBD69;
     border-color: #af9e71 #af9e71 #af9e71 #af9e71;
 }

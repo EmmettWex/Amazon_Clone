@@ -3,7 +3,7 @@
 .searchbar-wrapper {
     display: flex;
     align-items: center;
-    min-width: 368px;
+    min-width: 350px;
     /* width: 100%; */
 }
 
@@ -11,7 +11,7 @@
 
 .searchbar-input-field {
     height: 38px;
-    min-width: 270px;
+    min-width: 250px;
     width: 100%;
     border-style: hidden;
     font-size: 15px;
