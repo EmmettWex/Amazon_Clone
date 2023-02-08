@@ -13,9 +13,14 @@ const LoginFormPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
+    const [submitEmail, setSubmitEmail] = useState(false);
+    const [submitPassword, setSubmitPassword] = useState(false);
 
     const handleSubmit = e => {
         e.preventDefault();
+        
+        email ? setSubmitEmail(true) : setSubmitEmail(false) ;
+        password ? setSubmitPassword(true) : setSubmitPassword(false) ;
 
         setErrors([]);
 
@@ -56,7 +61,6 @@ const LoginFormPage = () => {
     let passwordError = null;
     let loginErrorBox = false;
 
-    
     if (errors[0]) {
         if (email === '') {
             emailError = 'Enter your email'
@@ -70,8 +74,9 @@ const LoginFormPage = () => {
             passwordError = null;
         }
 
-        if ( email !== '' || password !== '') {
-            console.log("hello")
+        if ( submitEmail || submitPassword ) {
+            console.log(submitEmail);
+            console.log(submitPassword);
             loginErrorBox = true;
         } else {
             loginErrorBox = false;
@@ -138,7 +143,10 @@ const LoginFormPage = () => {
                                 className="login-input"
                                 type="text"
                                 value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={(e) => {
+                                    e.preventDefault();
+                                    setEmail(e.target.value)}
+                                }
                                 required
                             />
                             {emailErrorChecker()}
@@ -149,7 +157,10 @@ const LoginFormPage = () => {
                                 className="login-input"
                                 type="password"
                                 value={password}
-                                onChange={(e) => setPassword(e.target.value)}
+                                onChange={(e) => {
+                                    e.preventDefault();
+                                    setPassword(e.target.value)}
+                                }
                                 required
                             />
                             {passwordErrorChecker()}
