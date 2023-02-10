@@ -6,14 +6,15 @@
 #  user_id    :bigint           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  item_id    :bigint           not null
 #
 class Cart < ApplicationRecord
 
-    validates :user_id, presence: true
+    validates :user_id, :item_id, presence: true
 
-    has_many :items,
+    belong_to :item,
         primary_key: :id,
-        foreign_key: :cart_id,
+        foreign_key: :item_id,
         class_name: :Item
 
     belongs_to :user,

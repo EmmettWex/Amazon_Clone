@@ -4,11 +4,12 @@ import './SearchBar.css';
 
 const SearchBar = () => {
 
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState('');
+    
     return (
         <div className="searchbar-wrapper">
             <select value="All" className="searchbar-select">
-                <option>All</option>
+                <option type="hidden">All</option>
                 <option>All Departments</option>
             </select>
             <input

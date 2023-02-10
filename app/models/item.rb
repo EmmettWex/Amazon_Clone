@@ -6,19 +6,20 @@
 #  name        :string           not null
 #  price       :bigint           not null
 #  description :string           not null
-#  cart_id     :bigint
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  item_type   :string           not null
 #
 class Item < ApplicationRecord
 
-    validates :name, :price, :description, null: false
+    validates :name, :price, :description, presence: false
     validates :name, uniqueness: true
-    validates :cart_id, presence: false
+    validates :cart_id, presence: false, allow_nil: true
+    validates :item_type, presence: true
 
-    belongs_to :cart,
+    has_many :cart_items,
         primary_key: :id,
-        foreign_key: :cart_id,
+        foreign_key: :item_id,
         class_name: :Cart
 
     # has_many :reviews,

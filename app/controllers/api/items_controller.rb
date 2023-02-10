@@ -10,4 +10,16 @@ class Api::ItemsController < ApplicationController
         end
     end
 
+    def index
+        @items = Item.all
+
+        if @items
+            render 'api/items/index'
+        else
+            render json: { items: nil }
+        end
+    end
+
+    # check bench bnb for conditional rendering
+
 end
