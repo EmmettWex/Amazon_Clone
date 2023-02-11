@@ -17,6 +17,22 @@ const receiveItems = items => {
     }
 }
 
+export const getItem = itemId => state => {
+    if (state.items) {
+        return state.items[itemId];
+    } else {
+        return null;
+    }
+}
+
+export const getItems = state => {
+    if (state.items) {
+        return Object.values(state.items);
+    } else {
+        return []
+    }
+}
+
 export const fetchItem = itemId => async dispatch => {
     const response = await csrfFetch(`/api/items/${itemId}`);
 
@@ -26,6 +42,8 @@ export const fetchItem = itemId => async dispatch => {
         return response;
     }
 }
+
+// also need a fetch items by category
 
 export const fetchItems = () => async dispatch => {
     const response = await csrfFetch(`/api/items`);
@@ -46,7 +64,7 @@ const itemsReducer = (state = {}, action) => {
             return newState;
         case RECEIVE_ITEMS:
             newState = action.payload;
-            return { newState };
+            return newState;
         default:
             return state;
     }

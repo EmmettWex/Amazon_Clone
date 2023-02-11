@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage';
-import HomePage from './components/HomePage';
+import SplashPage from './components/SplashPage';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <SignupFormPage />
       </Route>
       <Route path="/">
-        <HomePage />
+        <SplashPage />
       </Route>
     </Switch>
   );
