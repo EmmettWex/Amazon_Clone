@@ -13,6 +13,12 @@ const ItemShowPage = () => {
         dispatch(fetchItem(id));
     }, [dispatch, id]);
 
+    if (!item) {
+        return (
+            <div></div>
+        )
+    }
+
     console.log(item);
 
     return (
