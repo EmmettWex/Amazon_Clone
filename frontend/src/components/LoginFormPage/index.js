@@ -75,8 +75,6 @@ const LoginFormPage = () => {
         }
 
         if ( submitEmail || submitPassword ) {
-            console.log(submitEmail);
-            console.log(submitPassword);
             loginErrorBox = true;
         } else {
             loginErrorBox = false;

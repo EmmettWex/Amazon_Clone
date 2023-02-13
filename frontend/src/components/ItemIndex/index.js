@@ -11,13 +11,11 @@ const ItemIndex = () => {
 
     useEffect(() => {
         dispatch(itemsActions.fetchItems())
-    }, [dispatch])
-
-    console.log(items);
+    }, [dispatch]);
 
     return (
-        <div>
-            Test Here\
+        <div className="index-wrapper">
+            <div className="GE-image">image of the runescape GE goes here</div>
             {items.map((item) => {
                 return (
                     <div>

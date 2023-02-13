@@ -40,7 +40,9 @@ const NavBar = () => {
         <div className="navbar-wrapper">
             <div className="navbar-top">
                 <div className="navbar-element-border">
-                    <img id="navbar-logo" src={logo}></img>
+                    <Link to="/">
+                        <img id="navbar-logo" src={logo}></img>
+                    </Link>
                 </div>
                 <div className="navbar-element-border" id="navbar-location-display">
                     <img id="navbar-location-icon" src={location}></img>
@@ -61,6 +63,7 @@ const NavBar = () => {
                 </div>
                 {/* this is the end of the section */}
                 {navBarButton()}
+                
             </div>
             <NavBarLinks />
         </div>

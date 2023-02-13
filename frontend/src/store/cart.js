@@ -1,0 +1,105 @@
+import csrfFetch from "./csrf";
+
+const RECEIVE_CART_ITEMS = 'carts/RECEIVE_CART_ITEMS';
+const RECEIVE_CART_ITEM = 'carts/RECEIVE_CART_ITEM';
+const REMOVE_CART_ITEM = 'carts/REMOVE_CART_ITEM';
+
+const receiveCartItem = cartItem => {
+    return {
+        type: RECEIVE_CART_ITEM,
+        payload: cartItem
+    }
+}
+
+const receiveCartItems = cartItems => {
+    return {
+        type: RECEIVE_CART_ITEMS,
+        payload: cartItems
+    }
+}
+
+const removeCartItem = cartItemId => {
+    return {
+        type: REMOVE_CART_ITEM,
+        payload: cartItemId
+    }
+}
+
+export const getCartItem = cartItemId => state => {
+    if (state.cart) {
+        return state.cart[cartItemId];
+    } else {
+        return null;
+    }
+}
+
+export const getCartItems = state => {
+    if (state.cart) {
+        return Object.values(state.cart);
+    } else {
+        return [];
+    }
+}
+
+export const fetchCartItem = cartItemId => async dispatch => {
+    const response = await csrfFetch(`/api/carts/${cartItemId}`)
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(receiveCartItem(data));
+        return response;
+    }
+}
+
+export const fetchCartItems = userId => async dispatch => {
+    const response = await csrfFetch(`/api/users/${userId}/carts`);
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(receiveCartItems(data.cart));
+        return response;
+    }
+}
+
+export const deleteCartItem = cartItemId => async dispatch => {
+    const response = await csrfFetch(`/api/carts/${cartItemId}`, {
+        method: 'DELETE'
+    });
+
+    if (response.ok) {
+        dispatch(removeCartItem(cartItemId));
+        return response;
+    }
+}
+
+export const updateCartItem = cartItem => async dispatch => {
+    const response = await csrfFetch(`/api/carts/${cartItem.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(cartItem)
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(receiveCartItem(cartItem));
+    }
+}
+
+const cartItemReducer = ( state = {}, action ) => {
+    let newState = { ...state };
+
+    switch (action.type) {
+        case RECEIVE_CART_ITEM:
+            newState[action.payload.id] = action.payload; 
+            return newState;
+        case RECEIVE_CART_ITEMS:
+            newState = action.payload
+            return newState;
+        case REMOVE_CART_ITEM:
+            delete(newState[action.id]);
+            return newState;
+        default:
+            return state;
+    }
+}
+
+export default cartItemReducer;

@@ -7,12 +7,14 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  item_id    :bigint           not null
+#  quantity   :bigint           not null
 #
 class Cart < ApplicationRecord
 
-    validates :user_id, :item_id, presence: true
+    validates :user_id, :item_id, :quantity, presence: true
+    # validates :user_id, uniqueness: { scope: :item_id }
 
-    belong_to :item,
+    belongs_to :item,
         primary_key: :id,
         foreign_key: :item_id,
         class_name: :Item

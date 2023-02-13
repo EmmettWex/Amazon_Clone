@@ -19,8 +19,6 @@ const ItemShowPage = () => {
         )
     }
 
-    console.log(item);
-
     return (
         <div className="showpage-wrapper">
             <div className="item-information-wrapper">
@@ -29,18 +27,41 @@ const ItemShowPage = () => {
                     <img className="showpage-image"></img>
                 </div>
                 <div className="item-information">
-                    {item.name}
-                    <span>Ratings here?</span>
+                    <span className="showpage-item-name">{item.name}</span>
+                    <div className="showpage-item-ratings">Ratings here?</div>
+                    <div className="showpage-section-divider"></div>
+                    <span className="showpage-item-price">{item.price} GP</span>
+                    <span className="showpage-item-type">
+                        Item type:
+                        <span>item.type goes here</span>
+                    </span>
+                    <div className="showpage-section-divider"></div>
+                    <span id="about-this-item">About this item</span>
+                    <span className="showpage-item-description">
+                        {item.description}
+                    </span>
                 </div>
                 <div className="transaction-wrapper">
                     <span className="showpage-item-price">{item.price} GP</span>
-                    <select className="item-quantity-selector">
-                        {/* iterate through nums here */}
-                    </select>
+                    <span id="in-stock-message">In Stock.</span>
+                    <div className="item-quantity-wrapper">
+                        <select className="item-quantity-selector">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <span id="qty-label">Qty:</span>
+                    </div>
                     <button className="add-to-cart-button">Add to Cart</button>
                     <button className="buy-now-button">Buy Now</button>
                 </div>
             </div>
+            <div id="full-section-divider">
+                <div id="section-divider-line"></div>
+            </div>
+            <div className="ratings-wrapper">Ratings will go here</div>
             <div className="item-review-wrapper">
                 {/* reviews will go here */}
             </div>
