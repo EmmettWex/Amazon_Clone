@@ -5,17 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './CartItem.css';
 
-const CartItem = ({item}) => {
+const CartItem = ({item, handleCount}) => {
     const dispatch = useDispatch();
-    const history = useHistory();
     const cartItem = useSelector(cartActions.getCartItem(item.cartId));
 
     const [cartItemQuantity, setCartItemQuantity] = useState(item.quantity);
 
     const handleDelete = e => {
         e.preventDefault();
+        handleCount();
         dispatch(cartActions.deleteCartItem(item.cartId));
-        history.push('/cart');
     }
 
     return (
