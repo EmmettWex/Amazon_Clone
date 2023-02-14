@@ -8,8 +8,18 @@ import './CartItem.css';
 const CartItem = ({item, handleCount}) => {
     const dispatch = useDispatch();
     const cartItem = useSelector(cartActions.getCartItem(item.cartId));
-
     const [cartItemQuantity, setCartItemQuantity] = useState(item.quantity);
+    
+    const handleQuantityChange = e => {
+        e.preventDefault();
+        setCartItemQuantity(e.target.value);
+        const cartDup = { ...item };
+        cartDup["quantity"] = parseInt(cartItemQuantity);
+        console.log(cartDup)
+        // dispatch(cartActions.updateCartItem(cartDup));
+    }
+    
+    // console.log(cartItem);
 
     const handleDelete = e => {
         e.preventDefault();
@@ -30,10 +40,7 @@ const CartItem = ({item, handleCount}) => {
                     <select
                         className="cart-item-quantity-selector"
                         value={cartItemQuantity}
-                        onChange={(e) => {
-                            e.preventDefault();
-                            setCartItemQuantity(e.target.value);
-                        }}
+                        onChange={handleQuantityChange}
                     >
                         <option>1</option>
                         <option>2</option>

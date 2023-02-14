@@ -3,6 +3,7 @@ import csrfFetch from "./csrf";
 const RECEIVE_CART_ITEMS = 'carts/RECEIVE_CART_ITEMS';
 const RECEIVE_CART_ITEM = 'carts/RECEIVE_CART_ITEM';
 const REMOVE_CART_ITEM = 'carts/REMOVE_CART_ITEM';
+const ADD_CART_ITEM = 'carts/ADD_CART_ITEM';
 
 const receiveCartItem = cartItem => {
     return {
@@ -38,6 +39,18 @@ export const getCartItems = state => {
         return Object.values(state.cart);
     } else {
         return [];
+    }
+}
+
+export const addCartItem = cartItem => async dispatch => {
+    const response = await csrfFetch(`/api/carts`, {
+        method: 'POST',
+        body: JSON.stringify(cartItem)
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(receiveCartItem(data));
     }
 }
 
@@ -80,7 +93,7 @@ export const updateCartItem = cartItem => async dispatch => {
 
     if (response.ok) {
         const data = await response.json();
-        dispatch(receiveCartItem(cartItem));
+        dispatch(receiveCartItem(data));
     }
 }
 
