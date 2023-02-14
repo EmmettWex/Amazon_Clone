@@ -13,7 +13,18 @@ const CartIndex = () => {
         dispatch(cartActions.fetchCartItems())
     }, [dispatch]);
 
-    console.log(cart);
+    const totalPrice = () => {
+        let total = 0;
+
+        for (let i = 0; i < cart.length; i++) {
+            const itemPrice = cart[i];
+            // console.log(typeof itemPrice.price)
+            total += itemPrice.price;
+        }
+        return total;
+    }
+
+    // console.log(cart);
     
     if (!cart) {
         return (
@@ -24,11 +35,27 @@ const CartIndex = () => {
     if (cart[0]) {
         return (
             <div className="cart-index-wrapper">
-                {
-                    cart.map((item) => {
-                        <CartItem item={item} />
-                    })
-                }
+                <div className="cart-items-wrapper">
+                    <span id="shopping-cart">Shopping Cart</span>
+                    <span id="shopping-cart-price">Price</span>
+                    <div className="shopping-cart-divider"></div>
+                    {
+                        cart.map((item) => {
+                            return <CartItem item={item} />
+                        })
+                    }
+                    <span className="cart-subtotal">
+                        Subtotal ({cart.length} items):
+                        <span> {totalPrice()} GP</span>
+                    </span>
+                </div>
+                <div className="proceed-to-checkout">
+                    <span className="cart-subtotal">
+                        Subtotal ({cart.length} items):
+                        <span> {totalPrice()} GP</span>
+                    </span>
+                    <button className="checkout-button">Checkout</button>
+                </div>
             </div>
         )
     } else {

@@ -1,0 +1,19 @@
+/* div styling below */
+
+.cart-item-wrapper {
+    display: flex;
+    padding-left: 12px;
+    padding-bottom: 12px;
+    padding-top: 18px;
+    width: 100%;
+}
+
+.image-placeholder {
+    width: 180px;
+    height: 180px;
+    background-color: green;
+}
+
+.cart-item-info-wrapper {
+
+}

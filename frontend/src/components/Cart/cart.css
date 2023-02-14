@@ -1,9 +1,10 @@
 /* div styling below */
 
 .cart-index-wrapper {
-    width: calc(100% - 24px);
-    padding-left: 14px;
-    padding-right: 14px;
+    display: flex;
+    width: calc(100% - 24px - 12px);
+    padding-left: 18px;
+    padding-right: 18px;
     padding-top: 18px;
     padding-bottom: 18px;
     background-image: linear-gradient(
@@ -16,7 +17,7 @@
 }
 
 .cart-is-empty {
-    width: 100%;
+    width: calc(100% - 36px - 20px - 40px);
     padding-top: 14px;
     padding-bottom: 14px;
     display: flex;
@@ -25,11 +26,60 @@
     background-color: white;
 }
 
+.cart-items-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.proceed-to-checkout {
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    background-color: white;
+    margin-left: 20px;
+    padding: 20px;
+    font-size: 18px;
+}
+
 /* span styling below */
 
 #empty-cart {
     font-size: 24px;
     margin-bottom: 14px;
+}
+
+#shopping-cart {
+    font-size: 28px;
+}
+
+#shopping-cart-price {
+    margin-top: 14px;
+    margin-bottom: 3px;
+    font-size: 14px;
+    align-self: flex-end;
+    color: rgb(98, 98, 98);
+}
+
+.shopping-cart-divider {
+    width: 100%;
+    border-top: 1px solid #d5d5d5;
+}
+
+.cart-subtotal {
+    margin-top: 14px;
+    align-self: flex-end;
+    font-size: 18px;
+}
+
+.cart-subtotal > span {
+    font-weight: bold;
 }
 
 /* link styling below */
@@ -46,4 +96,28 @@
 #continue-shopping:active {
     color: #d08b30;
     text-decoration: underline;
+}
+
+/* button styling below */
+
+.checkout-button {
+    width: 100%;
+    height: 29px;
+    border-radius: 15px;
+    border: 0px;
+    background-color: #FFD814;
+    border: 1px solid #FFD814;
+    margin-top: 14px;
+}
+
+.checkout-button:hover {
+    background-color: #f0cc16;
+    cursor: pointer;
+}
+
+.checkout-button:active {
+    background-color: #e5c216;
+    border: 1.5px solid #ffffff;
+    outline: 1.5px solid rgb(131, 131, 255);
+    box-shadow: 0 0 10px rgb(193, 193, 193);
 }
