@@ -44,6 +44,7 @@ const CartIndex = () => {
                             return <CartItem item={item} />
                         })
                     }
+                    <div className="shopping-cart-divider"></div>
                     <span className="cart-subtotal">
                         Subtotal ({cart.length} items):
                         <span> {totalPrice()} GP</span>

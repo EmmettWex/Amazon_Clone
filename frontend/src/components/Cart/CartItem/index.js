@@ -8,6 +8,8 @@ import './CartItem.css';
 const CartItem = ({item}) => {
     const dispatch = useDispatch();
     const history = useHistory();
+    const cartItem = useSelector(cartActions.getCartItem(item.cartId));
+
     const [cartItemQuantity, setCartItemQuantity] = useState(item.quantity);
 
     const handleDelete = e => {
@@ -46,7 +48,9 @@ const CartItem = ({item}) => {
                     </span>
                 </div>
             </div>
-            <div></div>
+            <span className="cart-item-price">
+                {cartItem.price} GP
+            </span>
         </div>
     )
 }

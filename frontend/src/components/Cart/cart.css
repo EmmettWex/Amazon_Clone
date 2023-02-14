@@ -49,13 +49,6 @@
     font-size: 18px;
 }
 
-.cart-item-quantity {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 24px
-}
-
 /* span styling below */
 
 #empty-cart {
