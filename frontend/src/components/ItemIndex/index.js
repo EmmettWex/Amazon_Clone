@@ -7,7 +7,7 @@ import { getItems } from '../../store/items';
 
 const ItemIndex = () => {
     const dispatch = useDispatch();
-    const items = useSelector(getItems)
+    const items = useSelector(getItems);
 
     useEffect(() => {
         dispatch(itemsActions.fetchItems())
