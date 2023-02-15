@@ -32,7 +32,8 @@ class Api::CartsController < ApplicationController
     private
 
     def cart_params
-        params.require(:cart).permit(:item_id, :user_id, :quantity)
+        # am I supposed to include user_id in the permit here for a create?
+        params.require(:cart).permit(:item_id, :quantity)
     end
 
 end

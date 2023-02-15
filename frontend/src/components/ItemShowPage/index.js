@@ -3,11 +3,19 @@ import { Link, Redirect, useParams } from 'react-router-dom';
 import './ItemShowPage.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getItem, fetchItem } from '../../store/items';
+import * as cartActions from '../../store/cart';
+import * as sessionActions from '../../store/session';
 
 const ItemShowPage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
     const item = useSelector(getItem(id));
+    const [itemQuantity, setItemQuantity] = useState(1);
+
+    const addToCart = e => {
+        e.preventDefault();
+        dispatch(cartActions.addCartItem({ 'itemId': item.id, "quantity": parseInt(itemQuantity) }))
+    }
 
     useEffect(() => {
         dispatch(fetchItem(id));
@@ -45,7 +53,11 @@ const ItemShowPage = () => {
                     <span className="showpage-item-price">{item.price} GP</span>
                     <span id="in-stock-message">In Stock.</span>
                     <div className="item-quantity-wrapper">
-                        <select className="item-quantity-selector">
+                        <select
+                            value={itemQuantity}
+                            className="item-quantity-selector"
+                            onChange={(e) => {setItemQuantity(e.target.value)}}    
+                        >
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -54,7 +66,7 @@ const ItemShowPage = () => {
                         </select>
                         <span id="qty-label">Qty:</span>
                     </div>
-                    <button className="add-to-cart-button">Add to Cart</button>
+                    <button className="add-to-cart-button" onClick={addToCart}>Add to Cart</button>
                     <button className="buy-now-button">Buy Now</button>
                 </div>
             </div>

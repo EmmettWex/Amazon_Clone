@@ -7,19 +7,24 @@ import './CartItem.css';
 
 const CartItem = ({item, handleCount}) => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const cartItem = useSelector(cartActions.getCartItem(item.cartId));
     const [cartItemQuantity, setCartItemQuantity] = useState(item.quantity);
-    
+    console.log(cartItem);
+
+    const toItemShow = e => {
+        e.preventDefault();
+        history.push(`/items/${item.id}`);
+    }
+
     const handleQuantityChange = e => {
         e.preventDefault();
         setCartItemQuantity(e.target.value);
-        const cartDup = { ...item };
+        const cartDup = {};
         cartDup["quantity"] = parseInt(cartItemQuantity);
-        console.log(cartDup)
-        // dispatch(cartActions.updateCartItem(cartDup));
+        dispatch(cartActions.updateCartItem(cartDup));
+        handleCount();
     }
-    
-    // console.log(cartItem);
 
     const handleDelete = e => {
         e.preventDefault();
@@ -29,9 +34,9 @@ const CartItem = ({item, handleCount}) => {
 
     return (
         <div className="cart-item-wrapper">
-            <div className="image-placeholder"></div>
+            <div className="image-placeholder" onClick={toItemShow}></div>
             <div className="cart-item-info-wrapper">
-                <p className="cart-item-name">
+                <p className="cart-item-name" onClick={toItemShow}>
                     {item.name}
                 </p>
                 <p className="cart-item-creator">by JAGEX</p>

@@ -14,6 +14,10 @@
     background-color: green;
 }
 
+.image-placeholder:hover {
+    cursor: pointer;
+}
+
 .cart-item-info-wrapper {
     margin-left: 10px;
     margin-right: 10px;
@@ -51,6 +55,10 @@
 
 .cart-item-name {
     font-size: 18px;
+}
+
+.cart-item-name:hover {
+    cursor: pointer;
 }
 
 .cart-item-creator {
