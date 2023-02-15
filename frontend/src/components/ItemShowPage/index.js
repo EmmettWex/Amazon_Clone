@@ -11,15 +11,18 @@ const ItemShowPage = () => {
     const { id } = useParams();
     const item = useSelector(getItem(id));
     const [itemQuantity, setItemQuantity] = useState(1);
+    const userId = useSelector(state => state.session ? state.session.user.id : null);
+
+    console.log(item);
 
     const addToCart = e => {
         e.preventDefault();
-        dispatch(cartActions.addCartItem({ 'itemId': item.id, "quantity": parseInt(itemQuantity) }))
+        dispatch(cartActions.addCartItem({ 'item_id': item.id, 'quantity': parseInt(itemQuantity), 'user_id': userId }))
     }
 
     useEffect(() => {
         dispatch(fetchItem(id));
-    }, [dispatch, id]);
+    }, [dispatch]);
 
     if (!item) {
         return (
@@ -31,8 +34,7 @@ const ItemShowPage = () => {
         <div className="showpage-wrapper">
             <div className="item-information-wrapper">
                 <div className="showpage-image-wrapper">
-                    Image goes here
-                    <img className="showpage-image"></img>
+                    <img className="showpage-image" src={item.photourl}></img>
                 </div>
                 <div className="item-information">
                     <span className="showpage-item-name">{item.name}</span>

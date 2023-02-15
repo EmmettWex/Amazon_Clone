@@ -1,12 +1,31 @@
 class Api::CartsController < ApplicationController
 
+    def show
+        # debugger
+        @cart_item = Cart.find_by(id: params[:id])
+        render :show
+    end
+
     def create
+
+        # @cart_item = Cart.find_by
+        # if @cart_item
+        #     @cart_item.update(cart_params)
+        # else
+        #     @cart_item = Cart.new(cart_params)
+        #     @cart_item.user_id = current_user.id
+
+        #     if @cart_item.save
+        #     @item = @cart_item.item
+        #     end
+        # end
+
         @cart_item = Cart.new(cart_params)
         @cart_item.user_id = current_user.id
 
         if @cart_item.save
             @item = @cart_item.item
-            render :show
+            # render :show
         end
     end
 
@@ -18,6 +37,7 @@ class Api::CartsController < ApplicationController
     end
 
     def update
+        # debugger
         @cart_item = Cart.find_by(id: params[:id])
         @cart_item.update(cart_params)
         @item = @cart_item.item
@@ -25,7 +45,7 @@ class Api::CartsController < ApplicationController
     end
 
     def destroy
-        @cart_item = Cart.find_by(id: params[:id])
+        @cart_item = Cart.find(params[:id])
         @cart_item.delete
     end
 
@@ -33,7 +53,7 @@ class Api::CartsController < ApplicationController
 
     def cart_params
         # am I supposed to include user_id in the permit here for a create?
-        params.require(:cart).permit(:item_id, :quantity)
+        params.require(:cart).permit(:item_id, :quantity, :user_id)
     end
 
 end

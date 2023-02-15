@@ -42,14 +42,12 @@ export const getCartItems = state => {
 }
 
 export const addCartItem = cartItem => async dispatch => {
-    console.log(cartItem);
     const response = await csrfFetch(`/api/carts`, {
         method: 'POST',
         body: JSON.stringify(cartItem)
     });
 
     if (response.ok) {
-        console.log(response);
         const data = await response.json();
         dispatch(receiveCartItem(data));
         return response;
@@ -58,7 +56,7 @@ export const addCartItem = cartItem => async dispatch => {
 
 export const fetchCartItem = cartItemId => async dispatch => {
     const response = await csrfFetch(`/api/carts/${cartItemId}`)
-
+    
     if (response.ok) {
         const data = await response.json();
         dispatch(receiveCartItem(data));
@@ -88,14 +86,16 @@ export const deleteCartItem = cartItemId => async dispatch => {
 }
 
 export const updateCartItem = cartItem => async dispatch => {
-    // console.log(cartItem);
-    const response = await csrfFetch(`/api/carts/${cartItem.cartId}`, {
+    console.log(cartItem);
+    // debugger
+    const response = await csrfFetch(`/api/carts/${cartItem.id}`, {
         method: 'PATCH',
         body: JSON.stringify(cartItem)
     });
 
     if (response.ok) {
         const data = await response.json();
+        console.log(response);
         dispatch(receiveCartItem(data));
     }
 }

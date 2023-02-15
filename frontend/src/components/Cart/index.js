@@ -34,13 +34,10 @@ const CartIndex = () => {
 
         for (let i = 0; i < cart.length; i++) {
             const itemPrice = cart[i];
-            // console.log(typeof itemPrice.price)
             total += itemPrice.price;
         }
         return total;
     }
-
-    // console.log(cart);
     
     if (!cart) {
         return (

@@ -10,7 +10,10 @@ const CartItem = ({item, handleCount}) => {
     const history = useHistory();
     const cartItem = useSelector(cartActions.getCartItem(item.cartId));
     const [cartItemQuantity, setCartItemQuantity] = useState(item.quantity);
-    console.log(cartItem);
+
+    // useEffect(() => {
+    //     dispatch(cartActions.fetchCartItem(item.cartId))
+    // }, [dispatch])
 
     const toItemShow = e => {
         e.preventDefault();
@@ -21,9 +24,12 @@ const CartItem = ({item, handleCount}) => {
         e.preventDefault();
         setCartItemQuantity(e.target.value);
         const cartDup = {};
+        cartDup['id'] = item.cartId;
+        cartDup['item_id'] = item.id;
+        cartDup['user_id'] = item.userId;
         cartDup["quantity"] = parseInt(cartItemQuantity);
         dispatch(cartActions.updateCartItem(cartDup));
-        handleCount();
+        // handleCount();
     }
 
     const handleDelete = e => {
@@ -31,7 +37,7 @@ const CartItem = ({item, handleCount}) => {
         handleCount();
         dispatch(cartActions.deleteCartItem(item.cartId));
     }
-
+    
     return (
         <div className="cart-item-wrapper">
             <div className="image-placeholder" onClick={toItemShow}></div>
@@ -60,7 +66,7 @@ const CartItem = ({item, handleCount}) => {
                 </div>
             </div>
             <span className="cart-item-price">
-                {cartItem.price} GP
+                {item.price} GP
             </span>
         </div>
     )
