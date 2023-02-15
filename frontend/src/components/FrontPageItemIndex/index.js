@@ -26,11 +26,13 @@ const FrontPageItemIndex = () => {
     const item3 = items[2];
     const item4 = items[3];
     const item5 = items[4];
-    const item6 = items[4];
+    const item6 = items[5];
 
     return (
         <div className="front-page-index-wrapper">
-            <div className="GE-image">image of the runescape GE goes here</div>
+            <div className="GE-image">
+                <img id="front-page-image" src="https://amazonosrs-seeds.s3.amazonaws.com/osrs_ge_frontpage.jpeg"></img>
+            </div>
                 <div id="front-page-wrapper-top" className="front-page-items-wrapper">
                     <FrontPageItem item={item1} />
                     <FrontPageItem item={item2} />

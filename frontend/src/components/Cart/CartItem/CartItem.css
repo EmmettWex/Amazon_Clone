@@ -11,7 +11,13 @@
 .image-placeholder {
     min-width: 180px;
     height: 180px;
-    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder > img {
+    height: 100%;
 }
 
 .image-placeholder:hover {

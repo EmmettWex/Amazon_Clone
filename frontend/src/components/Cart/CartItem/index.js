@@ -11,6 +11,8 @@ const CartItem = ({item, handleCount}) => {
     const cartItem = useSelector(cartActions.getCartItem(item.cartId));
     const [cartItemQuantity, setCartItemQuantity] = useState(item.quantity);
 
+    console.log(item);
+
     // useEffect(() => {
     //     dispatch(cartActions.fetchCartItem(item.cartId))
     // }, [dispatch])
@@ -40,7 +42,9 @@ const CartItem = ({item, handleCount}) => {
     
     return (
         <div className="cart-item-wrapper">
-            <div className="image-placeholder" onClick={toItemShow}></div>
+            <div className="image-placeholder" onClick={toItemShow}>
+                <img src={item.photourl} />
+            </div>
             <div className="cart-item-info-wrapper">
                 <p className="cart-item-name" onClick={toItemShow}>
                     {item.name}

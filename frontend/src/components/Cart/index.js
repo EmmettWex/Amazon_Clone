@@ -64,7 +64,7 @@ const CartIndex = () => {
                     </span>
                 </div>
                 <div className="proceed-to-checkout">
-                    <span className="cart-subtotal">
+                    <span id="checkout-cart-subtotal" className="cart-subtotal">
                         Subtotal ({cart.length} items):
                         <span> {totalPrice()} GP</span>
                     </span>

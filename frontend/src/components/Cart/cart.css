@@ -79,6 +79,10 @@
     font-size: 18px;
 }
 
+#checkout-cart-subtotal {
+    align-self: flex-start;
+}
+
 .cart-subtotal > span {
     font-weight: bold;
 }

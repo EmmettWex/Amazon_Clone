@@ -12,7 +12,6 @@ import flag from '../../assets/images/usa_flag.png'
 import dropDown from '../../assets/images/dropdown_arrow.png'
 import cartLogo from '../../assets/images/cart.png';
 
-
 const NavBar = () => {
     const dispatch = useDispatch();
     const history = useHistory();
