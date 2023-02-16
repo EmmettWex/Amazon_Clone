@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Redirect, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './ItemShowPage.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getItem, fetchItem } from '../../store/items';
 import * as cartActions from '../../store/cart';
-import * as sessionActions from '../../store/session';
 
 const ItemShowPage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
     const item = useSelector(getItem(id));
     const [itemQuantity, setItemQuantity] = useState(1);
-    const userId = useSelector(state => state.session ? state.session.user.id : null);
+    const userId = useSelector(state => state.session?.user ? state.session.user.id : null);
 
     const addToCart = e => {
         e.preventDefault();
@@ -77,7 +76,6 @@ const ItemShowPage = () => {
             <div className="item-review-wrapper">
                 {/* reviews will go here */}
             </div>
-
         </div>
     )
 }
