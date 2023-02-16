@@ -28,6 +28,8 @@ const FrontPageItemIndex = () => {
     const item5 = items[4];
     const item6 = items[5];
 
+    // debugger
+
     return (
         <div className="front-page-index-wrapper">
             <div className="GE-image">

@@ -20,6 +20,4 @@ class Api::ItemsController < ApplicationController
         end
     end
 
-    # check bench bnb for conditional rendering
-
 end

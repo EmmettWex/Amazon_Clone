@@ -11,8 +11,6 @@ const CartItem = ({item, handleCount}) => {
     const cartItem = useSelector(cartActions.getCartItem(item.cartId));
     const [cartItemQuantity, setCartItemQuantity] = useState(item.quantity);
 
-    console.log(item);
-
     // useEffect(() => {
     //     dispatch(cartActions.fetchCartItem(item.cartId))
     // }, [dispatch])
@@ -24,20 +22,19 @@ const CartItem = ({item, handleCount}) => {
 
     const handleQuantityChange = e => {
         e.preventDefault();
-        setCartItemQuantity(e.target.value);
+        setCartItemQuantity(parseInt(e.target.value));
         const cartDup = {};
         cartDup['id'] = item.cartId;
         cartDup['item_id'] = item.id;
         cartDup['user_id'] = item.userId;
-        cartDup["quantity"] = parseInt(cartItemQuantity);
+        cartDup["quantity"] = parseInt(e.target.value);
         dispatch(cartActions.updateCartItem(cartDup));
-        // handleCount();
     }
 
     const handleDelete = e => {
         e.preventDefault();
-        handleCount();
         dispatch(cartActions.deleteCartItem(item.cartId));
+        handleCount();
     }
     
     return (

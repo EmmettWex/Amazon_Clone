@@ -8,28 +8,22 @@ import CartIndex from '../Cart';
 
 const SplashPage = () => {
 
-    const [count, setCount] = useState(0);
-    const handleCount = () => {
-        setCount(count + 1);
-    }
-
     return (
         <div className="homepage-wrapper">
+            <NavBar />
             <Switch>
                 <Route path="/cart">
-                    <NavBar />
+                    {/* <NavBar /> */}
                     <CartIndex />
                 </Route>
                 <Route path="/items/:id">
-                    <NavBar />
+                    {/* <NavBar /> */}
                     <ItemShowPage />
                 </Route>
                 <Route path="/items/index">
-                    <NavBar />
-                    <CartIndex />
+                    
                 </Route>
                 <Route path="/">
-                    <NavBar />
                     <FrontPageItemIndex />
                 </Route>
             </Switch>

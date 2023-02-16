@@ -13,8 +13,6 @@ const ItemShowPage = () => {
     const [itemQuantity, setItemQuantity] = useState(1);
     const userId = useSelector(state => state.session ? state.session.user.id : null);
 
-    console.log(item);
-
     const addToCart = e => {
         e.preventDefault();
         dispatch(cartActions.addCartItem({ 'item_id': item.id, 'quantity': parseInt(itemQuantity), 'user_id': userId }))
@@ -69,7 +67,7 @@ const ItemShowPage = () => {
                         <span id="qty-label">Qty:</span>
                     </div>
                     <button className="add-to-cart-button" onClick={addToCart}>Add to Cart</button>
-                    <button className="buy-now-button">Buy Now</button>
+                    {/* <button className="buy-now-button">Buy Now</button> */}
                 </div>
             </div>
             <div id="full-section-divider">

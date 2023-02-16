@@ -1,31 +1,25 @@
 class Api::CartsController < ApplicationController
 
     def show
-        # debugger
         @cart_item = Cart.find_by(id: params[:id])
         render :show
     end
 
     def create
+        @cart_item = Cart.find_by(user_id: params[:user_id], item_id: params[:item_id])
 
-        # @cart_item = Cart.find_by
-        # if @cart_item
-        #     @cart_item.update(cart_params)
-        # else
-        #     @cart_item = Cart.new(cart_params)
-        #     @cart_item.user_id = current_user.id
+        if @cart_item
+            @cart_item.quantity += params[:quantity]
+            @cart_item.save
+            render :show
+        else
+            @cart_item = Cart.new(cart_params)
+            # @cart_item.user_id = current_user.id
 
-        #     if @cart_item.save
-        #     @item = @cart_item.item
-        #     end
-        # end
-
-        @cart_item = Cart.new(cart_params)
-        @cart_item.user_id = current_user.id
-
-        if @cart_item.save
-            @item = @cart_item.item
-            # render :show
+             if @cart_item.save
+                @item = @cart_item.item
+                render :show
+             end
         end
     end
 
@@ -37,7 +31,6 @@ class Api::CartsController < ApplicationController
     end
 
     def update
-        # debugger
         @cart_item = Cart.find_by(id: params[:id])
         @cart_item.update(cart_params)
         @item = @cart_item.item

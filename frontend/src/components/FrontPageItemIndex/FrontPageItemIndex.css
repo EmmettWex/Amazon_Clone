@@ -1,6 +1,7 @@
 /* div styling below */
 
 .front-page-index-wrapper {
+    min-width: 1000px;
     width: 100%;
     min-height: 720px;
     background-color: rgb(254, 217, 217);

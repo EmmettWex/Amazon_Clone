@@ -25,16 +25,16 @@ const CartIndex = () => {
         for (let i = 0; i < cart.length; i++) {
             const item = cart[i];
             dispatch(cartActions.deleteCartItem(item.cartId));
-            history.push("/");
         }
+        history.push("/");
     }
 
     const totalPrice = () => {
         let total = 0;
 
         for (let i = 0; i < cart.length; i++) {
-            const itemPrice = cart[i];
-            total += itemPrice.price;
+            const product = cart[i];
+            total += (product.price * product.quantity);
         }
         return total;
     }

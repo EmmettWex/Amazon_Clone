@@ -28,6 +28,17 @@ const NavBar = () => {
         history.push('/cart');
     }
 
+    const totalCartItems = () => {
+        let total = 0;
+
+        for (let i = 0; i < cart.length; i++) {
+            const product = cart[i];
+            total += product.quantity
+        }
+
+        return total;
+    }
+
     const navBarButton = () => {
         
         if ( sessionUser ) {
@@ -82,7 +93,7 @@ const NavBar = () => {
                 >
                     <img id="navbar-cart" src={cartLogo} />
                     <p id="navbar-cart-total">
-                        {cart.length}
+                        {totalCartItems()}
                     </p>
                 </div>
             </div>
