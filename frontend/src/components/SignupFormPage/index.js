@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './SignupForm.css';
-import logo from '../../assets/images/amazon_logo.png';
 import exclamation from '../../assets/images/exclamation.png'
 
 const SignupFormPage = () => {
@@ -129,7 +128,7 @@ const SignupFormPage = () => {
         <div className="signup-section-a">
             <div id="signup-logo-div">
                 <Link to="/">
-                    <img id="sign-up-logo" src={logo}></img>
+                    <img id="sign-up-logo" src="https://amazonosrs-seeds.s3.amazonaws.com/OSRZon_black.png"></img>
                 </Link>
             </div>
             <div className="sign-up-box-section-a">

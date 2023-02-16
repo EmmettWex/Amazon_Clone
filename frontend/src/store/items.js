@@ -75,8 +75,6 @@ export const fetchItems = (searchTerm, type) => async dispatch => {
         return response;
     }
 
-        // // debugger
-
         // if (type && !searchTerm) {
         //     // if only type exists, search only by the type
 

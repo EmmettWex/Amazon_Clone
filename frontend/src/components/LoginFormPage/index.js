@@ -3,7 +3,6 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import './LoginForm.css';
-import logo from '../../assets/images/amazon_logo.png';
 import exclamation from '../../assets/images/exclamation.png'
 import alert from '../../assets/images/alert.png'
 
@@ -127,7 +126,7 @@ const LoginFormPage = () => {
         <div className="login-section-a">
             <div id="login-logo-div">
                 <Link to="/">
-                    <img id="login-logo" src={logo}></img>
+                    <img id="login-logo" src="https://amazonosrs-seeds.s3.amazonaws.com/OSRZon_black.png"></img>
                 </Link>
             </div>
             {loginErrorBoxChecker()}

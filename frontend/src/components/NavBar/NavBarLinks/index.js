@@ -8,6 +8,8 @@ const NavBarLinks = () => {
     const history = useHistory();
     const dispatch = useDispatch();
 
+    const [cleanliness, setCleanliness] = useState('');
+
     // hard coding a database fetch and render of item index based on
     // item type (category). This can be hard coded as it does not
     // need to be dynamic
@@ -115,6 +117,9 @@ const NavBarLinks = () => {
             </div>
             <div className="navbarlinks-link-wrapper">
                 <a className="navbarlinks-item-type" href="https://github.com/EmmettWex" target="_blank">Github</a>
+            </div>
+            <div className="navbarlinks-link-wrapper">
+                <a className="navbarlinks-item-type" href="https://www.linkedin.com/in/emmett-wechsler-3477a9266/" target="_blank">LinkedIn</a>
             </div>
         </div>
     )

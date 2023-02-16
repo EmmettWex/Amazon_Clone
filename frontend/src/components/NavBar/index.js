@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import * as cartActions from '../../store/cart';
 import './NavBar.css';
-import logo from '../../assets/images/navbar_logo.png';
 import location from '../../assets/images/navbar_location_marker.png';
 import NavBarLinks from './NavBarLinks';
 import SearchBar from '../SearchBar';
@@ -64,7 +63,7 @@ const NavBar = () => {
             <div className="navbar-top">
                 <div className="navbar-element-border">
                     <Link to="/">
-                        <img id="navbar-logo" src={logo}></img>
+                        <img id="navbar-logo" src="https://amazonosrs-seeds.s3.amazonaws.com/OSRZon_white.png"></img>
                     </Link>
                 </div>
                 <div className="navbar-element-border" id="navbar-location-display">

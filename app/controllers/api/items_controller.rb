@@ -12,7 +12,7 @@ class Api::ItemsController < ApplicationController
 
     # def index
     #     @items = Item.all
-    #     debugger
+    
     #     if @items
     #         render 'api/items/index'
     #     else
