@@ -23,10 +23,21 @@ const SearchBar = () => {
                 className="searchbar-select"
                 onChange={(e) => {
                     e.preventDefault();
-                    setItemType(e.target.value);
+                    if (e.target.value === 'All') {
+                        setItemType('');
+                    } else {
+                        setItemType(e.target.value);
+                    }
                 }}>
                 <option type="hidden">All</option>
-                <option>All Departments</option>
+                <option>Armor</option>
+                <option>Arrow</option>
+                <option>Bones</option>
+                <option>Food</option>
+                <option>Miscellaneous</option>
+                <option>Potion</option>
+                <option>Rune</option>
+                <option>Weapon</option>
             </select>
             <input
                 className="searchbar-input-field"
@@ -34,6 +45,11 @@ const SearchBar = () => {
                 placeholder='Search Amazon OSRS'
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
+                onKeyDown={(e) => {
+                    if (e.code === 'Enter') {
+                        handleSearch(e);
+                    }
+                }}
             />
             <button
                 className="searchbar-submit-button"

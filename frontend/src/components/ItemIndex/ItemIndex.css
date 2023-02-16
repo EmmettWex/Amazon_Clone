@@ -38,10 +38,69 @@
     background-color: white;
     border: 1px solid #d5d5d5;
     border-radius: 4px;
+    display: flex;
 }
 
-/* span */
+.index-item-image-wrapper {
+    height: 220px;
+    min-width: 300px;
+    background-color: rgb(237, 237, 237);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index-item-image-wrapper:hover {
+    cursor: pointer;
+}
+
+.index-item-info-wrapper {
+    margin: 10px;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* span styling below */
 
 #item-index-results {
     font-size: 20px;
+}
+
+.index-item-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.index-item-name:hover {
+    cursor: pointer;
+    color: #cf7500;
+}
+
+.index-item-description {
+    margin-top: 14px;
+    margin-bottom: 14px;
+    font-size: 18px;
+    font-weight: normal;
+    display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+}
+
+.index-item-price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.index-item-price-amount {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* img styling below */
+
+.index-item-image {
+    min-height: 215px;
 }

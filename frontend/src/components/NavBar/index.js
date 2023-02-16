@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import * as cartActions from '../../store/cart';
@@ -75,16 +75,11 @@ const NavBar = () => {
                     </div>
                 </div>
                 <SearchBar />
-                {/*
-                    potentially more functionality in navbar language
-                    should open a modal that says we only have english
-                */}
                 <div id="navbar-language" className="navbar-element-border">
                     <img id="flag" src={flag}/>
                     <span>EN</span>
                     <img id="arrow" src={dropDown} />
                 </div>
-                {/* this is the end of the section */}
                 {navBarButton()}
                 <div
                     id="navbar-cart-wrapper"

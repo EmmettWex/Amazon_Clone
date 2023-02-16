@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import { Link, Redirect, useHistory, useParams } from 'react-router-dom';
 import './ItemIndex.css';
 import * as itemsActions from '../../store/items';
 import { useDispatch, useSelector } from 'react-redux';
-import { getItems } from '../../store/items';
+import { getItems, fetchItems } from '../../store/items';
+import SingleItem from './SingleItem';
 
 const ItemIndex = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const items = useSelector(getItems);
 
-    console.log(items);
-    if (!items[1]) {
+    if (!items[0]) {
         return (
             <div className="item-index-wrapper">
                 <div className="no-search-made">
@@ -26,8 +26,9 @@ const ItemIndex = () => {
         <div className="item-index-wrapper">
             <div className="item-index-inner-wrapper">
                 <p id="item-index-results">RESULTS</p>
-
-                <div className="index-item-component-wrapper"></div>
+                {items.map((item) => {
+                    return <SingleItem key={item.id} item={item} />
+                })}
             </div>
         </div>
     )

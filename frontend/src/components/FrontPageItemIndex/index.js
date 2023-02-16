@@ -12,7 +12,7 @@ const FrontPageItemIndex = () => {
     const items = useSelector(getItems);
 
     useEffect(() => {
-        dispatch(itemsActions.fetchItems())
+        dispatch(itemsActions.fetchItems('',''))
     }, [dispatch]);
 
     if (!items) {
@@ -27,8 +27,6 @@ const FrontPageItemIndex = () => {
     const item4 = items[3];
     const item5 = items[4];
     const item6 = items[5];
-
-    // debugger
 
     return (
         <div className="front-page-index-wrapper">
@@ -45,14 +43,6 @@ const FrontPageItemIndex = () => {
                     <FrontPageItem item={item5} />
                     <FrontPageItem item={item6} />
                 </div>
-
-            {/* {items.map((item) => {
-                return (
-                    <div>
-                        <Link to={`/items/${item.id}`}>{item.name}</Link>
-                    </div>
-                )
-            })} */}
         </div>
     )
 }
