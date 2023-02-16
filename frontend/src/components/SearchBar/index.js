@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import './SearchBar.css';
-import { fetchCartItems } from '../../store/cart';
+import { fetchItems } from '../../store/items';
 
 const SearchBar = () => {
     const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState('');
     
     const handleSearch = e => {
-        dispatch(fetchCartItems(searchTerm, itemType));
+        dispatch(fetchItems(searchTerm, itemType));
         history.push(`/items/index`)
     }
 
@@ -33,7 +33,7 @@ const SearchBar = () => {
                 type="text"
                 placeholder='Search Amazon OSRS'
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
             />
             <button
                 className="searchbar-submit-button"

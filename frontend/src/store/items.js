@@ -29,7 +29,7 @@ export const getItems = state => {
     if (state.items) {
         return state.items;
     } else {
-        return []
+        return [];
     }
 }
 
@@ -64,40 +64,41 @@ export const fetchItem = itemId => async dispatch => {
 //     }
 // }
 
-export const fetchItems = (searchTerm, itemType) => async dispatch => {
+export const fetchItems = (searchTerm, type) => async dispatch => {
     const response = await csrfFetch(`/api/items`);
 
     if (response.ok) {
         const data = await response.json();
 
         const allItems = Object.values(data.items);
+        // debugger
 
-        if (itemType && !searchTerm) {
+        if (type && !searchTerm) {
             // if only type exists, search only by the type
 
-            const filteredItems = allItems.filter(item => item.type === itemType);
+            const filteredItems = allItems.filter(item => item.itemType === type);
             dispatch(receiveItems(filteredItems));
 
-        } else if (itemType && searchTerm) {
+        } else if (type && searchTerm) {
             // search by type first, then search by search terms
             // this only happens if someone uses the drop down menu
             // in their search
 
-            const filteredByType = allItems.filter(item => item.type === itemType);
-            const fullyFiltered = filteredByType.filter(item => item.name.includes(searchTerm));
+            const filteredByType = allItems.filter(item => item.itemType === type);
+            const fullyFiltered = filteredByType.filter(item => item.name.toLowerCase().includes(searchTerm));
 
             dispatch(receiveItems(fullyFiltered));
 
-        } else if (!itemType && searchTerm) {
+        } else if (!type && searchTerm) {
             // search by search terms first, then also search by type
 
             const filteredItems = allItems.filter(item =>
-                item.type.includes(searchTerm) || item.name.includes(searchTerm)
+                item.itemType.includes(searchTerm) || item.name.toLowerCase().includes(searchTerm)
             );
 
             dispatch(receiveItems(filteredItems));
 
-        } else if (!itemType && !searchTerm) {
+        } else if (!type && !searchTerm) {
             dispatch(receiveItems(allItems))
         }
 

@@ -5,6 +5,7 @@ import FrontPageItemIndex from '../FrontPageItemIndex';
 import ItemShowPage from '../ItemShowPage';
 import * as itemsActions from '../../store/items';
 import CartIndex from '../Cart';
+import ItemIndex from '../ItemIndex';
 
 const SplashPage = () => {
 
@@ -13,15 +14,13 @@ const SplashPage = () => {
             <NavBar />
             <Switch>
                 <Route path="/cart">
-                    {/* <NavBar /> */}
                     <CartIndex />
                 </Route>
-                <Route path="/items/:id">
-                    {/* <NavBar /> */}
-                    <ItemShowPage />
-                </Route>
                 <Route path="/items/index">
-                    
+                    <ItemIndex />
+                </Route>
+                <Route path="/items/:id">
+                    <ItemShowPage />
                 </Route>
                 <Route path="/">
                     <FrontPageItemIndex />

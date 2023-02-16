@@ -1,13 +1,47 @@
 /* div styling below */
 
-.index-wrapper {
+.item-index-wrapper {
+    min-width: 1000px;
     width: 100%;
     min-height: 720px;
-    background-image:
-        linear-gradient(
-            to bottom,
-            #fff8dc,
-            #fffae8,
-            #ffffff
-    );
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-search-made {
+    margin-top: 20px;
+    padding: 20px;
+    width: max-content;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.no-search-made > p {
+    margin-bottom: 20px;
+}
+
+.item-index-inner-wrapper {
+    margin-top: 20px;
+    width: 80%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.index-item-component-wrapper {
+    margin-top: 5px;
+    min-width: 100%;
+    min-height: 218px;
+    background-color: white;
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+}
+
+/* span */
+
+#item-index-results {
+    font-size: 20px;
 }
