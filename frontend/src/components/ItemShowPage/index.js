@@ -72,7 +72,7 @@ const ItemShowPage = () => {
             <div id="full-section-divider">
                 <div id="section-divider-line"></div>
             </div>
-            <div className="ratings-wrapper">Ratings will go here</div>
+            {/* <div className="ratings-wrapper">Ratings will go here</div> */}
             <div className="item-review-wrapper">
                 {/* reviews will go here */}
             </div>
