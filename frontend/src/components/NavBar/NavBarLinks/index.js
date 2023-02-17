@@ -52,7 +52,7 @@ const NavBarLinks = () => {
 
     const renderPotions = e => {
         e.preventDefault();
-        dispatch(fetchItems('', 'Potions'))
+        dispatch(fetchItems('', 'Potion'))
         history.push('/items/index')
     }
 

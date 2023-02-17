@@ -102,5 +102,6 @@
 /* img styling below */
 
 .index-item-image {
-    min-height: 215px;
+    max-height: 215px;
+    max-width: 80%;
 }
