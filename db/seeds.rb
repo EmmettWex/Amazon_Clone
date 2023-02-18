@@ -381,6 +381,7 @@ ApplicationRecord.transaction do
     #     item_type: 
     # )
     # i4.photo.attach({io: URI.open(""), filename: ""})
+    # 
     
     puts "Done!"
 end
