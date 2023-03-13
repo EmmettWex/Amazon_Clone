@@ -110,7 +110,7 @@ const itemsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_ITEM:
-            newState[action.payload.id] = action.payload; 
+            newState[action.payload.id] = action.payload;
             return newState;
         case RECEIVE_ITEMS:
             newState = action.payload;

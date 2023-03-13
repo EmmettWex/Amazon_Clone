@@ -38,10 +38,10 @@ const ItemShowPage = () => {
                     <div className="showpage-item-ratings">Ratings here?</div>
                     <div className="showpage-section-divider"></div>
                     <span className="showpage-item-price">{item.price} GP</span>
-                    <span className="showpage-item-type">
-                        Item type:
-                        <span>item.type goes here</span>
-                    </span>
+                    <div className="showpage-item-type">
+                        <span className="item-type-left">Item type</span>
+                        <span className="item-type-right">{item.itemType}</span>
+                    </div>
                     <div className="showpage-section-divider"></div>
                     <span id="about-this-item">About this item</span>
                     <span className="showpage-item-description">

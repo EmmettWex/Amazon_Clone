@@ -24,9 +24,9 @@ class Item < ApplicationRecord
 
     has_one_attached :photo
 
-    # has_many :reviews,
-    #     primary_key: :id,
-    #     foreign_key: :item_id,
-    #     class_name: :Review
+    has_many :reviews,
+        primary_key: :id,
+        foreign_key: :item_id,
+        class_name: :Review
 
 end
