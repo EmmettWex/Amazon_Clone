@@ -1,0 +1,42 @@
+.review-create-form-change-name {
+    font-size: 14px;
+    color: #007185;
+}
+
+.review-create-form-change-name:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #da7b00;
+}
+
+.review-create-form-main-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.review-create-name-content-wrapper {
+    min-width: 742px;
+    max-width: 742px;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.review-create-form-name-change-wrapper {
+    height: 54px;
+    width: 100%;
+    background-color: #DEFAFF;
+    display: flex;
+    justify-content: center;
+}
+
+.review-create-form-wrapper {
+    background-color: white;
+    min-width: 770px;
+}
+
+.review-create-userName {
+    font-size: 13px;
+    margin-right: 10px;
+}

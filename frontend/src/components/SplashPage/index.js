@@ -6,6 +6,7 @@ import ItemShowPage from '../ItemShowPage';
 import * as itemsActions from '../../store/items';
 import CartIndex from '../Cart';
 import ItemIndex from '../ItemIndex';
+import CreateReviewForm from '../CreateReviewForm';
 
 const SplashPage = () => {
 
@@ -21,6 +22,9 @@ const SplashPage = () => {
                 </Route>
                 <Route path="/items/:id">
                     <ItemShowPage />
+                </Route>
+                <Route>
+                    <CreateReviewForm path="/createReview" />
                 </Route>
                 <Route path="/">
                     <FrontPageItemIndex />

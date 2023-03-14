@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import itemsReducer from './items';
 import cartItemReducer from './cart';
+import reviewReducer from './review';
 
 let enhancer;
 
@@ -18,7 +19,8 @@ if (process.env.NODE_ENV === 'production') {
 const rootReducer = combineReducers({
     items: itemsReducer,
     session: sessionReducer,
-    cart: cartItemReducer
+    cart: cartItemReducer,
+    reviews: reviewReducer
 });
 
 const configureStore = (preloadedState = {}) => {
