@@ -24,7 +24,7 @@ const SplashPage = () => {
                     <ItemShowPage />
                 </Route>
                 <Route>
-                    <CreateReviewForm path="/createReview" />
+                    <CreateReviewForm path="/createReview/:itemId" />
                 </Route>
                 <Route path="/">
                     <FrontPageItemIndex />
