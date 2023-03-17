@@ -11,6 +11,7 @@ const ItemReviews = ({id}) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const reviews = useSelector(getReviews);
+    const user = useSelector(state => state.session.user);
     
     useEffect(() => {
         if (!reviews[0]) {
@@ -19,7 +20,11 @@ const ItemReviews = ({id}) => {
     }, [dispatch])
 
     const toCreateReviewForm = () => {
-        history.push(`/items/${id}/createReview`)
+        if (user) {
+            history.push(`/items/${id}/createReview`);
+        } else {
+            history.push(`/login`);
+        }
     }
 
     const ratingStars = (reviewRating) => {
@@ -98,7 +103,10 @@ const ItemReviews = ({id}) => {
                 <div className="item-reviews-section-left-divider" />
                 <h2 className="item-reviews-section-left-sub-title">Review this product</h2>
                 <span className="share-your-thoughts">Share your thoughts with other customers</span>
-                <button className="item-reviews-button" onClick={toCreateReviewForm}>Write a customer review</button>
+                {
+                    user ? <button className="item-reviews-button" onClick={toCreateReviewForm}>Write a customer review</button> :
+                        <button className="item-reviews-button" onClick={toCreateReviewForm}>Log in to write a review</button>
+                }
                 <div className="item-reviews-section-left-divider" />
             </div>
             <div className="item-reviews-section-right">
