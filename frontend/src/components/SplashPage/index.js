@@ -20,11 +20,11 @@ const SplashPage = () => {
                 <Route path="/items/index">
                     <ItemIndex />
                 </Route>
+                <Route path="/items/:id/createReview">
+                    <CreateReviewForm />
+                </Route>
                 <Route path="/items/:id">
                     <ItemShowPage />
-                </Route>
-                <Route>
-                    <CreateReviewForm path="/createReview/:itemId" />
                 </Route>
                 <Route path="/">
                     <FrontPageItemIndex />

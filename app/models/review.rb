@@ -15,7 +15,7 @@ class Review < ApplicationRecord
 
     validates :rating, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 10 }
     validates :headline, :description, presence: true
-    validates :author_id, :item_id, presence: true, uniqueness: true
+    validates :author_id, :item_id, presence: true
 
     belongs_to :author,
         primary_key: :id,

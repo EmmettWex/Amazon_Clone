@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory} from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import { fetchItem } from '../../store/items';
 import * as reviewActions from '../../store/review';
 import { useDispatch, useSelector } from 'react-redux';
 import './CreateReviewForm.css';
@@ -8,18 +9,27 @@ import emptyStar from '../../assets/images/empty_star.png';
 import filledStar from '../../assets/images/filled_star.png';
 import exclamation from '../../assets/images/exclamation.png'
 
-const CreateReviewForm = ({item}) => {
+const CreateReviewForm = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const user = useSelector(state => state.session.user);
+    const { id } = useParams();
+    const item = useSelector(getItem(id));
     const [errors, setErrors] = useState([]);
-
     const [nameChange, setNameChange] = useState(true);
 
     const [userName, setUserName] = useState(user.name);
     const [rating, setRating] = useState(0);
     const [headline, setHeadline] = useState("");
     const [description, setDescription] = useState("");
+
+    debugger
+
+    useEffect(() => {
+        if (!item) {
+            dispatch(fetchItem(id));
+        }
+    }, [dispatch])
 
     const invokeSetNameChange = e => {
         if (nameChange) {
@@ -58,7 +68,6 @@ const CreateReviewForm = ({item}) => {
                 }
             });
     }
-    console.log(errors);
 
     let starError;
     let headlineError;
@@ -162,8 +171,8 @@ const CreateReviewForm = ({item}) => {
                     <div className="review-create-title-wrapper">
                         <h1 className="review-create-title">Create Review</h1>
                         <div className="review-create-title-item-subsection">
-                            <div className="review-create-form-title-image"></div>
-                            <span className="review-create-form-title-item-name">Item name will go here, this is a filler</span>
+                            <img className="review-create-form-title-image" src={item.photourl}/>
+                            <span className="review-create-form-title-item-name">{item.name}</span>
                         </div>
                     </div>
                     <div className="review-create-form-content-divider"></div>
@@ -195,6 +204,7 @@ const CreateReviewForm = ({item}) => {
                             className="review-create-headline-textbox"
                             type="text"
                             placeholder="What's most important to know?"
+                            value={headline}
                             onChange={e => {setHeadline(e.target.value)}}
                         />
                         {headlineErrorChecker()}
@@ -205,6 +215,7 @@ const CreateReviewForm = ({item}) => {
                         <textarea
                             className="review-create-description"
                             placeholder="What did you like or dislike? What did you use this product for?"
+                            value={description}
                             onChange={e => {setDescription(e.target.value)}}
                         />
                         {descriptionErrorChecker()}

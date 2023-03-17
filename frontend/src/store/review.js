@@ -34,8 +34,8 @@ export const getReview = reviewId => state => {
 }
 
 export const getReviews = state => {
-    if (state.cart) {
-        return Object.values(state.cart);
+    if (state.reviews) {
+        return Object.values(state.reviews);
     } else {
         return [];
     }
@@ -52,10 +52,10 @@ export const fetchReview = reviewId => async dispatch => {
 }
 
 export const fetchReviews = itemId => async dispatch => {
-    const response = await csrfFetch(`/api/reviews/${itemId}/reviews`);
-
+    const response = await csrfFetch(`/api/items/${itemId}/reviews`);
+    
     if (response.ok) {
-        const data = response.json();
+        const data = await response.json();
         dispatch(receiveReviews(data.reviews));
         return response;
     }
@@ -100,7 +100,7 @@ export const updateReview = review => async dispatch => {
 
 const reviewReducer = ( state = {}, action ) => {
     let newState = { ...state };
-
+    
     switch (action.type) {
         case RECEIVE_REVIEW:
             newState[action.payload.id] = action.payload;

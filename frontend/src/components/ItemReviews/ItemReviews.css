@@ -1,0 +1,115 @@
+.item-reviews-section-wrapper {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: calc(100%-40px);
+    display: flex;
+}
+
+.item-reviews-section-left {
+    min-width: 300px;
+    min-height: 100px;
+}
+
+.item-reviews-section-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-reviews-section-left-divider {
+    width: 100%;
+    border-top: 1px solid #d5d5d5;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.item-reviews-section-left-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.item-reviews-button {
+    height: 29px;
+    background-color: white;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #d5d5d5;
+}
+
+.item-reviews-button:hover {
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+}
+
+.item-reviews-button:active {
+    background-color: rgb(164, 164, 164)
+}
+
+.item-reviews-section-left-sub-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.share-your-thoughts {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.item-reviews-section-right {
+    width: calc(100% - 300px);
+    padding-left: 75px;
+}
+
+.item-reviews-section-right-content-wrapper {
+    min-width: 585px;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-reviews-section-right-display-name {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.item-reviews-section-right-display-name > span {
+    font-size: 13px;
+    margin-left: 12px;
+}
+
+.item-reviews-section-right-pfp {
+    height: 34px;
+}
+
+.item-reviews-section-right-ratings {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.item-reviews-section-right-ratings > img {
+    height: 18px;
+}
+
+.item-reviews-section-right-ratings > span {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.item-reviews-section-right-created {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #565959;
+}
+
+.item-reviews-section-right-description {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.item-reviews-section-right-review {
+    margin-bottom: 10px;
+}

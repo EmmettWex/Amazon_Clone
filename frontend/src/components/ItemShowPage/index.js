@@ -4,6 +4,7 @@ import './ItemShowPage.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getItem, fetchItem } from '../../store/items';
 import * as cartActions from '../../store/cart';
+import ItemReviews from '../ItemReviews/index';
 
 const ItemShowPage = () => {
     const dispatch = useDispatch();
@@ -72,10 +73,7 @@ const ItemShowPage = () => {
             <div id="full-section-divider">
                 <div id="section-divider-line"></div>
             </div>
-            {/* <div className="ratings-wrapper">Ratings will go here</div> */}
-            <div className="item-review-wrapper">
-                {/* reviews will go here */}
-            </div>
+            <ItemReviews id={id} />
         </div>
     )
 }
