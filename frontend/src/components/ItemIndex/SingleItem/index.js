@@ -17,6 +17,9 @@ const SingleItem = ({item}) => {
             </div>
             <div className="index-item-info-wrapper">
                 <span className="index-item-name" onClick={toItemShowPage}>{item.name}</span>
+                <div className="index-item-ratings">
+
+                </div>
                 <span className="index-item-description">{item.description}</span>
                 <span className="index-item-price">
                     Price: <span className="index-item-price-amount">{item.price} GP</span>

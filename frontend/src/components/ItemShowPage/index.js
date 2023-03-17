@@ -3,13 +3,17 @@ import { useParams } from 'react-router-dom';
 import './ItemShowPage.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getItem, fetchItem } from '../../store/items';
+import { fetchReviews, getReviews } from '../../store/review';
 import * as cartActions from '../../store/cart';
 import ItemReviews from '../ItemReviews/index';
+import emptyStar from '../../assets/images/empty_star.png';
+import filledStar from '../../assets/images/filled_star.png';
 
 const ItemShowPage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
     const item = useSelector(getItem(id));
+    const reviews = useSelector(getReviews);
     const [itemQuantity, setItemQuantity] = useState(1);
     const userId = useSelector(state => state.session?.user ? state.session.user.id : null);
 
@@ -20,9 +24,36 @@ const ItemShowPage = () => {
 
     useEffect(() => {
         dispatch(fetchItem(id));
+        dispatch(fetchReviews)
     }, [dispatch]);
 
-    if (!item) {
+    const ratingStars = (reviewRating) => {
+        const stars = [];
+        let totalFilledStars = reviewRating;
+
+        for (let i = 0; i < 5; i++) {
+            if (totalFilledStars > 0) {
+                stars.push(filledStar);
+                totalFilledStars--;
+            } else {
+                stars.push(emptyStar);
+            }
+        }
+        return stars;
+    }
+
+    const averageRating = (reviewsArray) => {
+        let totalStars = 0;
+
+        for (let i = 0; i < reviewsArray.length; i++) {
+            const stars = reviewsArray[i].rating;
+            totalStars += stars;
+        }
+
+        return Math.round(totalStars / reviews.length * 10) / 10;
+    }
+
+    if (!item || !reviews) {
         return (
             <div></div>
         )
@@ -36,7 +67,13 @@ const ItemShowPage = () => {
                 </div>
                 <div className="item-information">
                     <span className="showpage-item-name">{item.name}</span>
-                    <div className="showpage-item-ratings">Ratings here?</div>
+                    <div className="showpage-item-ratings">
+                        {
+                            ratingStars(averageRating(reviews)).map((star, i) => {
+                                return <img src={star} key={i * 17} />
+                            })
+                        }
+                    </div>
                     <div className="showpage-section-divider"></div>
                     <span className="showpage-item-price">{item.price} GP</span>
                     <div className="showpage-item-type">

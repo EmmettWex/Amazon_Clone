@@ -23,8 +23,6 @@ const CreateReviewForm = () => {
     const [headline, setHeadline] = useState("");
     const [description, setDescription] = useState("");
 
-    debugger
-
     useEffect(() => {
         if (!item) {
             dispatch(fetchItem(id));
@@ -159,6 +157,10 @@ const CreateReviewForm = () => {
                 </div>
             )
         }
+    }
+
+    if (!item) {
+        return <div></div>
     }
 
     return (

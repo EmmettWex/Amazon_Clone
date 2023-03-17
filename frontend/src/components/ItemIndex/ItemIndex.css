@@ -105,3 +105,8 @@
     max-height: 215px;
     max-width: 80%;
 }
+
+.index-item-ratings {
+    display: flex;
+    flex-direction: row;
+}

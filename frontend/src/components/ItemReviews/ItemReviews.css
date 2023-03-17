@@ -9,9 +9,6 @@
 .item-reviews-section-left {
     min-width: 300px;
     min-height: 100px;
-}
-
-.item-reviews-section-left {
     display: flex;
     flex-direction: column;
 }
@@ -111,5 +108,23 @@
 }
 
 .item-reviews-section-right-review {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 10px;
+}
+
+.item-reviews-section-left-average-rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.item-reviews-section-left-average-rating > img {
+    height: 22px;
+}
+
+.item-reviews-section-left-average-rating > span {
+    margin-left: 10px;
+    font-size: 18px;
 }
