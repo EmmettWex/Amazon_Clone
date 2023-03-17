@@ -2,7 +2,7 @@
 
 OSRZon is an Amazon clone that allows you to shop for items from the classic MMORPG Runescape. OSRZon allows you to shop for items using search functionality.
 
-*livelink goes here*
+[Live Link](https://amazon-osrs.onrender.com/)
 
 ## Technologies Used
 * ### Backend:
