@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import * as cartActions from '../../../store/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';

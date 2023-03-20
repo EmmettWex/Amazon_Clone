@@ -24,7 +24,7 @@ const ItemShowPage = () => {
 
     useEffect(() => {
         dispatch(fetchItem(id));
-        dispatch(fetchReviews)
+        dispatch(fetchReviews(id))
     }, [dispatch]);
 
     const ratingStars = (reviewRating) => {

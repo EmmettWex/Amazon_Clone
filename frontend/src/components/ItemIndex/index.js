@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Redirect, useHistory, useParams } from 'react-router-dom';
+import React from 'react';
 import './ItemIndex.css';
-import * as itemsActions from '../../store/items';
-import { useDispatch, useSelector } from 'react-redux';
-import { getItems, fetchItems } from '../../store/items';
+import { useSelector } from 'react-redux';
+import { getItems } from '../../store/items';
 import SingleItem from './SingleItem';
 
 const ItemIndex = () => {
-    const dispatch = useDispatch();
-    const history = useHistory();
     const items = useSelector(getItems);
 
     if (!items[0]) {

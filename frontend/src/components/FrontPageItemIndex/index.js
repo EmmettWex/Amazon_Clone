@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import './FrontPageItemIndex.css';
 import * as itemsActions from '../../store/items';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,7 +8,6 @@ import FrontPageItem from './FrontPageItem';
 
 const FrontPageItemIndex = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
     const items = useSelector(getItems);
 
     useEffect(() => {
