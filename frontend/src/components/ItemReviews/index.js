@@ -59,8 +59,7 @@ const ItemReviews = ({id}) => {
             '12': 'December'
         }
 
-        const dateString = `${months[dateObj[1]]} ${dateObj[2]}, ${dateObj[0]}`
-        console.log(date);
+        const dateString = `${months[dateObj[1]]} ${dateObj[2]}, ${dateObj[0]}`;
         return dateString;
     }
 
