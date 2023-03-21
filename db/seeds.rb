@@ -64,9 +64,10 @@ ApplicationRecord.transaction do
         name: 'Abyssal whip',
         price: 1309380,
         description: 'The abyssal whip is a one-handed Melee weapon which requires an Attack level of 70 to wield. The whip is among the most powerful and popular non-degradable melee weapons and is capable of attacking at the same speed of daggers and scimitars at 2.4 seconds per hit.',
-        item_type: 'Weapon'
+        item_type: 'Weapon',
+        photourl: "https://amazonosrs-seeds.s3.amazonaws.com/abyssal_whip.png"
     )
-    i1.photo.attach({io: URI.open("https://amazonosrs-seeds.s3.amazonaws.com/abyssal_whip.png"), filename: "abyssal_whip.png"})
+    # i1.photo.attach({io: URI.open("https://amazonosrs-seeds.s3.amazonaws.com/abyssal_whip.png"), filename: "abyssal_whip.png"})
 
     i2 = Item.create!(
         name: 'Rune scimitar',
