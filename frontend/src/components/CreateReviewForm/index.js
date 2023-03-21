@@ -18,7 +18,7 @@ const CreateReviewForm = () => {
     const [errors, setErrors] = useState([]);
     const [nameChange, setNameChange] = useState(true);
 
-    const [userName, setUserName] = useState(user.name);
+    const [userName, setUserName] = useState(user?.name ? user.name : '');
     const [rating, setRating] = useState(0);
     const [headline, setHeadline] = useState("");
     const [description, setDescription] = useState("");
@@ -41,14 +41,15 @@ const CreateReviewForm = () => {
         e.preventDefault();
 
         const review = {
-            item_id: 1,
+            item_id: item.id,
             author_id: user.id,
             description: description,
             headline: headline,
-            rating: rating
+            rating: rating,
+            display_name: userName
         }
         setErrors([])
-        return dispatch(reviewActions.addReview(review))
+        return dispatch(reviewActions.addReview(review, history))
             .catch(async (response) => {
                 let data;
                 try {
@@ -224,7 +225,9 @@ const CreateReviewForm = () => {
                     </div>
                     <div className="review-create-form-content-divider"></div>
                     <div className="review-create-title-wrapper">
-                        <button className="review-create-submit-button" onClick={submitItemReview}>Submit</button>
+                        <button className="review-create-submit-button" onClick={e => {
+                            e.preventDefault();
+                            submitItemReview(e)}}>Submit</button>
                     </div>
                 </div>
             </div>
