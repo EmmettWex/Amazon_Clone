@@ -62,14 +62,12 @@ export const fetchReviews = itemId => async dispatch => {
 }
 
 export const addReview = (review, history) => async dispatch => {
-    debugger
     const response = await csrfFetch(`/api/reviews`, {
         method: 'POST',
         body: JSON.stringify(review)
     });
     
     if (response.ok) {
-        debugger
         const data = await response.json();
         dispatch(receiveReview(data));
         history.push(`/items/${review.item_id}`)

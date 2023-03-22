@@ -42,8 +42,6 @@ const ItemShowPage = () => {
         return stars;
     }
 
-    console.log(item);
-
     const averageRating = (reviewsArray) => {
         let totalStars = 0;
 
