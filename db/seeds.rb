@@ -19,8 +19,8 @@ ApplicationRecord.transaction do
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('items')
-    # ApplicationRecord.connection.reset_pk_sequence!('users')
-    # ApplicationRecord.connection.reset_pk_sequence!('reviews')
+    ApplicationRecord.connection.reset_pk_sequence!('users')
+    ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
     puts "Creating users..."
 
@@ -451,8 +451,8 @@ ApplicationRecord.transaction do
 
     puts 'Creating reviews...'
 
-    # items = Item.all
-    # users = User.all
+    items = Item.all
+    users = User.all
 
     # abyssal whip reviews
     Review.create!(
@@ -460,8 +460,8 @@ ApplicationRecord.transaction do
         rating: 4,
         headline: 'Love this item',
         description: 'Fantastic attack training item, not great for strenght though.',
-        author_id: User.first,
-        item_id: Item.first
+        author_id: User.first.id,
+        item_id: items[0].id
     )
 
     # Review.create!(
