@@ -459,23 +459,23 @@ ApplicationRecord.transaction do
         item_id: 1
     )
 
-    Review.create!(
-        display_name: 'Chloe Champken',
-        rating: 2,
-        headline: 'Not what I expected',
-        description: 'I ordered this for my partner and he tore up all our furniture playing with it',
-        author_id: 2,
-        item_id: 1
-    )
+    # Review.create!(
+    #     display_name: 'Chloe Champken',
+    #     rating: 2,
+    #     headline: 'Not what I expected',
+    #     description: 'I ordered this for my partner and he tore up all our furniture playing with it',
+    #     author_id: 2,
+    #     item_id: 1
+    # )
 
-    Review.create!(
-        display_name: 'Gabe Calderone',
-        rating: 5,
-        headline: 'I love it!',
-        description: 'I was able to max my account and this was fantastic for training attack and slayer',
-        author_id: 3,
-        item_id: 1
-    )
+    # Review.create!(
+    #     display_name: 'Gabe Calderone',
+    #     rating: 5,
+    #     headline: 'I love it!',
+    #     description: 'I was able to max my account and this was fantastic for training attack and slayer',
+    #     author_id: 3,
+    #     item_id: 1
+    # )
 
     # Review.create!(
     #     display_name: 'Kino Calderone',
