@@ -11,16 +11,16 @@ require "open-uri"
 ApplicationRecord.transaction do 
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
+    Review.destroy_all
     Cart.destroy_all
     Item.destroy_all
     User.destroy_all
-    Review.destroy_all
 
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('items')
-    ApplicationRecord.connection.reset_pk_sequence!('users')
-    ApplicationRecord.connection.reset_pk_sequence!('reviews')
+    # ApplicationRecord.connection.reset_pk_sequence!('users')
+    # ApplicationRecord.connection.reset_pk_sequence!('reviews')
 
     puts "Creating users..."
 
