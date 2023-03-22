@@ -450,7 +450,7 @@ ApplicationRecord.transaction do
     puts 'Creating reviews...'
 
     # abyssal whip reviews
-    Review.create!(
+    r1 = Review.create!(
         display_name: 'Emmett Wechsler',
         rating: 4,
         headline: 'Love this item',
