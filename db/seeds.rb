@@ -504,62 +504,62 @@ ApplicationRecord.transaction do
         item_id: 1
     )
 
-    # rune scimitar reviews
-    Review.create!(
-        display_name: 'Zezima',
-        rating: 5,
-        headline: "It's a classic",
-        description: "What a great item, it's not the best scimitar but it holds a special place in my heart",
-        author_id: 4,
-        item_id: 2
-    )
+    # # rune scimitar reviews
+    # Review.create!(
+    #     display_name: 'Zezima',
+    #     rating: 5,
+    #     headline: "It's a classic",
+    #     description: "What a great item, it's not the best scimitar but it holds a special place in my heart",
+    #     author_id: 4,
+    #     item_id: 2
+    # )
 
-    Review.create!(
-        display_name: 'The Old Nite',
-        rating: 5,
-        headline: 'This is a favorite of mine',
-        description: 'I remember when I was first leveling up how excited I was when I got to first equip this. I highly recommend for new players.',
-        author_id: 3,
-        item_id: 2
-    )
+    # Review.create!(
+    #     display_name: 'The Old Nite',
+    #     rating: 5,
+    #     headline: 'This is a favorite of mine',
+    #     description: 'I remember when I was first leveling up how excited I was when I got to first equip this. I highly recommend for new players.',
+    #     author_id: 3,
+    #     item_id: 2
+    # )
 
-    # black d'hide body
-    Review.create!(
-        display_name: 'Erin',
-        rating: 4,
-        headline: 'It looks good but not great',
-        description: 'I like the design, but it just isnt what it used to be since the nerf.',
-        author_id: 1,
-        item_id: 3
-    )
+    # # black d'hide body
+    # Review.create!(
+    #     display_name: 'Erin',
+    #     rating: 4,
+    #     headline: 'It looks good but not great',
+    #     description: 'I like the design, but it just isnt what it used to be since the nerf.',
+    #     author_id: 1,
+    #     item_id: 3
+    # )
 
-    # shark
-    Review.create!(
-        display_name: 'Connor Cassara',
-        rating: 5,
-        headline: 'Wooooooah nelly!',
-        description: 'Man oh man do I love eating me some sharks! I caught em myself, I dont even buy them here. But I recommend you all get some because they are just so delicious.',
-        author_id: 1,
-        item_id: 4
-    )
+    # # shark
+    # Review.create!(
+    #     display_name: 'Connor Cassara',
+    #     rating: 5,
+    #     headline: 'Wooooooah nelly!',
+    #     description: 'Man oh man do I love eating me some sharks! I caught em myself, I dont even buy them here. But I recommend you all get some because they are just so delicious.',
+    #     author_id: 1,
+    #     item_id: 4
+    # )
 
-    Review.create!(
-        display_name: 'Brotha P',
-        rating: 5,
-        headline: 'A must have',
-        description: 'I use these in all of my teleport spells, I could not live without them.',
-        author_id: 1,
-        item_id: 5
-    )
+    # Review.create!(
+    #     display_name: 'Brotha P',
+    #     rating: 5,
+    #     headline: 'A must have',
+    #     description: 'I use these in all of my teleport spells, I could not live without them.',
+    #     author_id: 1,
+    #     item_id: 5
+    # )
 
-    Review.create!(
-        display_name: 'Armadyl',
-        rating: 1,
-        headline: 'Bandos is a wuss',
-        description: 'Hahahaha loser Bandos would get rekt by me any day. What a loser!!',
-        author_id: 1,
-        item_id: 6
-    )
+    # Review.create!(
+    #     display_name: 'Armadyl',
+    #     rating: 1,
+    #     headline: 'Bandos is a wuss',
+    #     description: 'Hahahaha loser Bandos would get rekt by me any day. What a loser!!',
+    #     author_id: 1,
+    #     item_id: 6
+    # )
 
     ## templates
     # Review.create!(
