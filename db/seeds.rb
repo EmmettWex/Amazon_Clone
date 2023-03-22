@@ -459,107 +459,107 @@ ApplicationRecord.transaction do
         item_id: Item.first.id
     )
 
-    # Review.create!(
-    #     display_name: 'Chloe Champken',
-    #     rating: 2,
-    #     headline: 'Not what I expected',
-    #     description: 'I ordered this for my partner and he tore up all our furniture playing with it',
-    #     author_id: 2,
-    #     item_id: 1
-    # )
+    Review.create!(
+        display_name: 'Chloe Champken',
+        rating: 2,
+        headline: 'Not what I expected',
+        description: 'I ordered this for my partner and he tore up all our furniture playing with it',
+        author_id: User.second.id,
+        item_id: Item.first.id
+    )
 
-    # Review.create!(
-    #     display_name: 'Gabe Calderone',
-    #     rating: 5,
-    #     headline: 'I love it!',
-    #     description: 'I was able to max my account and this was fantastic for training attack and slayer',
-    #     author_id: 3,
-    #     item_id: 1
-    # )
+    Review.create!(
+        display_name: 'Gabe Calderone',
+        rating: 5,
+        headline: 'I love it!',
+        description: 'I was able to max my account and this was fantastic for training attack and slayer',
+        author_id: User.third.id,
+        item_id: Item.first.id
+    )
 
-    # Review.create!(
-    #     display_name: 'Kino Calderone',
-    #     rating: 5,
-    #     headline: "Great for PK'ing",
-    #     description: 'This has been my primary melee weapon for pking for two years.',
-    #     author_id: 4,
-    #     item_id: 1
-    # )
+    Review.create!(
+        display_name: 'Kino Calderone',
+        rating: 5,
+        headline: "Great for PK'ing",
+        description: 'This has been my primary melee weapon for pking for two years.',
+        author_id: User.fourth.id,
+        item_id: Item.first.id
+    )
 
-    # Review.create!(
-    #     display_name: 'Shawna Hartley',
-    #     rating: 1,
-    #     headline: 'It destroyed my walls',
-    #     description: 'I bought this to hang up in my living room and the tip of the whip scratched up my wall. I would not recommend anyone get this item.',
-    #     author_id: 5,
-    #     item_id: 1
-    # )
+    Review.create!(
+        display_name: 'Shawna Hartley',
+        rating: 1,
+        headline: 'It destroyed my walls',
+        description: 'I bought this to hang up in my living room and the tip of the whip scratched up my wall. I would not recommend anyone get this item.',
+        author_id: User.fifth.id,
+        item_id: Item.first.id
+    )
 
-    # Review.create!(
-    #     display_name: 'Lynsie Aragon',
-    #     rating: 3,
-    #     headline: "I didn't get to use it yet",
-    #     description: "I ordered this but I don't have 70 attack yet so I haven't been able to use it yet, I am excited to though.",
-    #     author_id: 6,
-    #     item_id: 1
-    # )
+    Review.create!(
+        display_name: 'Lynsie Aragon',
+        rating: 3,
+        headline: "I didn't get to use it yet",
+        description: "I ordered this but I don't have 70 attack yet so I haven't been able to use it yet, I am excited to though.",
+        author_id: User.sixth.id,
+        item_id: Item.first.id
+    )
 
-    # # rune scimitar reviews
-    # Review.create!(
-    #     display_name: 'Zezima',
-    #     rating: 5,
-    #     headline: "It's a classic",
-    #     description: "What a great item, it's not the best scimitar but it holds a special place in my heart",
-    #     author_id: 4,
-    #     item_id: 2
-    # )
+    # rune scimitar reviews
+    Review.create!(
+        display_name: 'Zezima',
+        rating: 5,
+        headline: "It's a classic",
+        description: "What a great item, it's not the best scimitar but it holds a special place in my heart",
+        author_id: User.fourth.id,
+        item_id: Item.second.id
+    )
 
-    # Review.create!(
-    #     display_name: 'The Old Nite',
-    #     rating: 5,
-    #     headline: 'This is a favorite of mine',
-    #     description: 'I remember when I was first leveling up how excited I was when I got to first equip this. I highly recommend for new players.',
-    #     author_id: 3,
-    #     item_id: 2
-    # )
+    Review.create!(
+        display_name: 'The Old Nite',
+        rating: 5,
+        headline: 'This is a favorite of mine',
+        description: 'I remember when I was first leveling up how excited I was when I got to first equip this. I highly recommend for new players.',
+        author_id: User.third.id,
+        item_id: Item.second.id
+    )
 
-    # # black d'hide body
-    # Review.create!(
-    #     display_name: 'Erin',
-    #     rating: 4,
-    #     headline: 'It looks good but not great',
-    #     description: 'I like the design, but it just isnt what it used to be since the nerf.',
-    #     author_id: 1,
-    #     item_id: 3
-    # )
+    # black d'hide body
+    Review.create!(
+        display_name: 'Erin',
+        rating: 4,
+        headline: 'It looks good but not great',
+        description: 'I like the design, but it just isnt what it used to be since the nerf.',
+        author_id: User.first.id,
+        item_id: Item.third.id
+    )
 
-    # # shark
-    # Review.create!(
-    #     display_name: 'Connor Cassara',
-    #     rating: 5,
-    #     headline: 'Wooooooah nelly!',
-    #     description: 'Man oh man do I love eating me some sharks! I caught em myself, I dont even buy them here. But I recommend you all get some because they are just so delicious.',
-    #     author_id: 1,
-    #     item_id: 4
-    # )
+    # shark
+    Review.create!(
+        display_name: 'Connor Cassara',
+        rating: 5,
+        headline: 'Wooooooah nelly!',
+        description: 'Man oh man do I love eating me some sharks! I caught em myself, I dont even buy them here. But I recommend you all get some because they are just so delicious.',
+        author_id: User.first.id,
+        item_id: Item.fourth.id
+    )
 
-    # Review.create!(
-    #     display_name: 'Brotha P',
-    #     rating: 5,
-    #     headline: 'A must have',
-    #     description: 'I use these in all of my teleport spells, I could not live without them.',
-    #     author_id: 1,
-    #     item_id: 5
-    # )
+    Review.create!(
+        display_name: 'Brotha P',
+        rating: 5,
+        headline: 'A must have',
+        description: 'I use these in all of my teleport spells, I could not live without them.',
+        author_id: User.first.id,
+        item_id: Item.fifth.id
+    )
 
-    # Review.create!(
-    #     display_name: 'Armadyl',
-    #     rating: 1,
-    #     headline: 'Bandos is a wuss',
-    #     description: 'Hahahaha loser Bandos would get rekt by me any day. What a loser!!',
-    #     author_id: 1,
-    #     item_id: 6
-    # )
+    Review.create!(
+        display_name: 'Armadyl',
+        rating: 1,
+        headline: 'Bandos is a wuss',
+        description: 'Hahahaha loser Bandos would get rekt by me any day. What a loser!!',
+        author_id: User.first.id,
+        item_id: Item.sixth.id
+    )
 
     ## templates
     # Review.create!(
