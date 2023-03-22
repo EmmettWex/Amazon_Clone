@@ -477,32 +477,32 @@ ApplicationRecord.transaction do
         item_id: 1
     )
 
-    Review.create!(
-        display_name: 'Kino Calderone',
-        rating: 5,
-        headline: "Great for PK'ing",
-        description: 'This has been my primary melee weapon for pking for two years.',
-        author_id: 4,
-        item_id: 1
-    )
+    # Review.create!(
+    #     display_name: 'Kino Calderone',
+    #     rating: 5,
+    #     headline: "Great for PK'ing",
+    #     description: 'This has been my primary melee weapon for pking for two years.',
+    #     author_id: 4,
+    #     item_id: 1
+    # )
 
-    Review.create!(
-        display_name: 'Shawna Hartley',
-        rating: 1,
-        headline: 'It destroyed my walls',
-        description: 'I bought this to hang up in my living room and the tip of the whip scratched up my wall. I would not recommend anyone get this item.',
-        author_id: 5,
-        item_id: 1
-    )
+    # Review.create!(
+    #     display_name: 'Shawna Hartley',
+    #     rating: 1,
+    #     headline: 'It destroyed my walls',
+    #     description: 'I bought this to hang up in my living room and the tip of the whip scratched up my wall. I would not recommend anyone get this item.',
+    #     author_id: 5,
+    #     item_id: 1
+    # )
 
-    Review.create!(
-        display_name: 'Lynsie Aragon',
-        rating: 3,
-        headline: "I didn't get to use it yet",
-        description: "I ordered this but I don't have 70 attack yet so I haven't been able to use it yet, I am excited to though.",
-        author_id: 6,
-        item_id: 1
-    )
+    # Review.create!(
+    #     display_name: 'Lynsie Aragon',
+    #     rating: 3,
+    #     headline: "I didn't get to use it yet",
+    #     description: "I ordered this but I don't have 70 attack yet so I haven't been able to use it yet, I am excited to though.",
+    #     author_id: 6,
+    #     item_id: 1
+    # )
 
     # # rune scimitar reviews
     # Review.create!(
