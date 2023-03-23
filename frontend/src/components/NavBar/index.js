@@ -42,12 +42,16 @@ const NavBar = () => {
         return total;
     }
 
+    const logoutOfAccount = e => {
+        dispatch(cartActions.clearCartItems());
+        dispatch(sessionActions.logout())
+        history.push(`/`)
+    }
+
     const navBarButton = () => {
-        
         if ( sessionUser ) {
             return (
-                <button className="navbar-login-logout" onClick={(e) => {
-                    dispatch(sessionActions.logout())}}>
+                <button className="navbar-login-logout" onClick={logoutOfAccount}>
                     {signInOutButton}
                 </button>
             )

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import './ItemShowPage.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getItem, fetchItem } from '../../store/items';
@@ -11,6 +11,7 @@ import filledStar from '../../assets/images/filled_star.png';
 
 const ItemShowPage = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const { id } = useParams();
     const item = useSelector(getItem(id));
     const reviews = useSelector(getReviews);
@@ -19,7 +20,11 @@ const ItemShowPage = () => {
 
     const addToCart = e => {
         e.preventDefault();
-        dispatch(cartActions.addCartItem({ 'item_id': item.id, 'quantity': parseInt(itemQuantity), 'user_id': userId }))
+        if (userId) {
+            dispatch(cartActions.addCartItem({ 'item_id': item.id, 'quantity': parseInt(itemQuantity), 'user_id': userId }))
+        } else {
+            history.push(`/login`)
+        }
     }
 
     useEffect(() => {
@@ -103,7 +108,7 @@ const ItemShowPage = () => {
                         </select>
                         <span id="qty-label">Qty:</span>
                     </div>
-                    <button className="add-to-cart-button" onClick={addToCart}>Add to Cart</button>
+                    <button className="add-to-cart-button" onClick={addToCart}>{ userId ? 'Add to Cart' : 'Log in to add to cart'}</button>
                     {/* <button className="buy-now-button">Buy Now</button> */}
                 </div>
             </div>
