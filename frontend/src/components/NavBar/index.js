@@ -20,7 +20,9 @@ const NavBar = () => {
     const cart = useSelector(cartActions.getCartItems);
     
     useEffect(() => {
-        dispatch(cartActions.fetchCartItems());
+        if (sessionUser) {
+            dispatch(cartActions.fetchCartItems());
+        }
     }, [dispatch])
 
     const toCart = e => {
@@ -29,6 +31,8 @@ const NavBar = () => {
 
     const totalCartItems = () => {
         let total = 0;
+
+        if (!cart) return total;
 
         for (let i = 0; i < cart.length; i++) {
             const product = cart[i];

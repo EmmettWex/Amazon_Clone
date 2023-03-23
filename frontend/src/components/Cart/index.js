@@ -9,6 +9,7 @@ import CartItem from './CartItem/index';
 const CartIndex = () => {
     const dispatch = useDispatch();
     const history = useHistory();
+    const sessionUser = useSelector(state => state?.session?.user);
     const cart = useSelector(cartActions.getCartItems);
 
     // will be able to re-render the parent component using this.
@@ -18,7 +19,9 @@ const CartIndex = () => {
     }
 
     useEffect(() => {
-        dispatch(cartActions.fetchCartItems());
+        if (sessionUser) {
+            dispatch(cartActions.fetchCartItems(sessionUser.id));
+        }
     }, [dispatch, count]);
 
     const handleCheckout = e => {
