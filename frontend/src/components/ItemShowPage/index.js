@@ -75,7 +75,7 @@ const ItemShowPage = () => {
                     <div className="showpage-item-ratings">
                         {
                             ratingStars(averageRating(reviews)).map((star, i) => {
-                                return <img src={star} key={i * 17} />
+                                return <img src={star} key={i} />
                             })
                         }
                     </div>

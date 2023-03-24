@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ItemIndex.css';
-import { useSelector } from 'react-redux';
-import { getItems } from '../../store/items';
+import { useHistory, useLocation } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { getItems, fetchItemsWithQueryString, clearItems } from '../../store/items';
 import SingleItem from './SingleItem';
 
 const ItemIndex = () => {
+    const dispatch = useDispatch();
+    const location = useLocation();
     const items = useSelector(getItems);
+
+    useEffect(() => {
+        dispatch(fetchItemsWithQueryString(location.search))
+    }, [dispatch, location.search])
 
     if (!items[0]) {
         return (

@@ -228,7 +228,7 @@ ApplicationRecord.transaction do
         name: 'Dragon bones',
         price: 2876,
         description: "Dragon bones are bones dropped by most adult dragons, which give 72 Prayer experience when buried.",
-        item_type: 'Bone',
+        item_type: 'Bones',
         photourl: "https://amazonosrs-seeds.s3.amazonaws.com/dragon_bones.png"
     )
     # i21.photo.attach({io: URI.open("https://amazonosrs-seeds.s3.amazonaws.com/dragon_bones.png"), filename: "dragon_bones.png"})

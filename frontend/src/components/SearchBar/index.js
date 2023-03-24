@@ -12,8 +12,12 @@ const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState('');
     
     const handleSearch = e => {
-        dispatch(fetchItems(searchTerm, itemType));
-        history.push(`/items/index`)
+        // dispatch(fetchItems(searchTerm, itemType));
+        // history.push(`/items/index/${searchTerm}/${itemType}`)
+        history.push({
+            pathname: `/items/index`,
+            search: `item_type=${itemType}&search_terms=${searchTerm}`
+        })
     }
 
     return (

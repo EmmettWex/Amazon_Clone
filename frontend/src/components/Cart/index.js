@@ -57,7 +57,7 @@ const CartIndex = () => {
                     <div className="shopping-cart-divider"></div>
                     {
                         cart.map((item) => {
-                            return <CartItem item={item} handleCount={handleCount} count={count} />
+                            return <CartItem key={item.id} item={item} handleCount={handleCount} count={count} />
                         })
                     }
                     <div className="shopping-cart-divider"></div>

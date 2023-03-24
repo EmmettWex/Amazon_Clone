@@ -2,6 +2,7 @@ import csrfFetch from './csrf';
 
 const RECEIVE_ITEM = 'items/RECEIVE_ITEM';
 const RECEIVE_ITEMS = 'items/RECEIVE_ITEMS';
+const CLEAR_ITEMS = 'items/CLEAR_ITEMS'
 
 const receiveItem = item => {
     return {
@@ -14,6 +15,12 @@ const receiveItems = items => {
     return {
         type: RECEIVE_ITEMS,
         payload: items
+    }
+}
+
+export const clearItems = () => {
+    return {
+        type: CLEAR_ITEMS
     }
 }
 
@@ -63,6 +70,26 @@ export const fetchItem = itemId => async dispatch => {
 //         return response;
 //     }
 // }
+
+// this is the thunk action creator that leverages a query string and useLocation
+// react hook in order to make my fetch request
+
+export const fetchItemsWithQueryString = (queryString) => async dispatch => {
+    const response = await csrfFetch(`/api/items/${queryString}`);
+
+    if (response.ok) {
+        const data = await response.json();
+
+        const allItems = Object.values(data.items);
+        dispatch(receiveItems(allItems));
+        return response;
+    }
+}
+
+// this is the old way I did the item search
+// I decided to switch to a query string version leverageing the useLocation hook.
+// I have left this up though because there are certain locations that
+// still use this version and it does not make sense to do a whole refactoring
 
 export const fetchItems = (searchTerm, type) => async dispatch => {
     const response = await csrfFetch(`/api/items/?item_type=${type}&search_terms=${searchTerm}`);
@@ -115,6 +142,8 @@ const itemsReducer = (state = {}, action) => {
         case RECEIVE_ITEMS:
             newState = action.payload;
             return newState;
+        case CLEAR_ITEMS:
+            return {};
         default:
             return state;
     }

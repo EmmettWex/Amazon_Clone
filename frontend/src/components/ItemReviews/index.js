@@ -94,7 +94,7 @@ const ItemReviews = ({id}) => {
                 <div className="item-reviews-section-left-average-rating">
                     {
                         ratingStars(averageRating(reviews)).map((star, i) => {
-                            return <img src={star} key={i * 11} />
+                            return <img src={star} key={i} />
                         })
                     }
                     <span>{averageRating(reviews)} out of 5</span>
@@ -113,7 +113,7 @@ const ItemReviews = ({id}) => {
                     <h2 className="item-reviews-section-left-sub-title">Reviews from Gielinor</h2>
                     {
                         reviews.map((review, i) => {
-                            return <div key={i * 13} className="item-reviews-section-right-review">
+                            return <div key={i} className="item-reviews-section-right-review">
                                 <div className="item-reviews-section-right-display-name">
                                     <img className="item-reviews-section-right-pfp" src={pfp} />
                                     <span>{review.displayName}</span>
@@ -121,7 +121,7 @@ const ItemReviews = ({id}) => {
                                 <div className="item-reviews-section-right-ratings">
                                     {
                                         ratingStars(review.rating).map((star, i) => {
-                                            return <img src={star} key={i * 11} />
+                                            return <img src={star} key={i} />
                                         })
                                     }
                                     <span>{review.headline}</span>

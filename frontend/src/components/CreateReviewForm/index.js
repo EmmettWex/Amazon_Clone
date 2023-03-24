@@ -192,7 +192,7 @@ const CreateReviewForm = () => {
                                             className="review-create-rating-stars"
                                             src={star}
                                             onClick={e => {setRating(i+1)}}
-                                            key={star + `${i}`}
+                                            key={i}
                                         />
                                     )
                                 })
