@@ -7,6 +7,7 @@ import * as itemsActions from '../../store/items';
 import CartIndex from '../Cart';
 import ItemIndex from '../ItemIndex';
 import CreateReviewForm from '../CreateReviewForm';
+import Footer from '../Footer'
 
 const SplashPage = () => {
 
@@ -30,6 +31,7 @@ const SplashPage = () => {
                     <FrontPageItemIndex />
                 </Route>
             </Switch>
+            <Footer />
         </div>
     )
 }

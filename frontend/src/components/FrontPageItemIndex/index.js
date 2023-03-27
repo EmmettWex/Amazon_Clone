@@ -20,28 +20,51 @@ const FrontPageItemIndex = () => {
         )
     }
 
-    const item1 = items[0];
-    const item2 = items[1];
-    const item3 = items[2];
-    const item4 = items[3];
-    const item5 = items[4];
-    const item6 = items[5];
-
     return (
         <div className="front-page-index-wrapper">
             <div className="GE-image">
-                <img id="front-page-image" src="https://amazonosrs-seeds.s3.amazonaws.com/osrs_ge_frontpage.jpeg"></img>
+                <div className="front-page-image-mask">
+                    <img src="https://amazonosrs-seeds.s3.amazonaws.com/osrs_ge_frontpage.jpeg" />
+                </div>
             </div>
-                <div id="front-page-wrapper-top" className="front-page-items-wrapper">
-                    <FrontPageItem item={item1} />
-                    <FrontPageItem item={item2} />
-                    <FrontPageItem item={item3} />
+            <div className="front-page-items-wrapper">
+                <div className="front-page-items-container">
+                    <FrontPageItem item={items[0]} />
+                    <FrontPageItem item={items[1]} />
+                    <FrontPageItem item={items[2]} />
+                    <FrontPageItem item={items[3]} />
                 </div>
-            <div id="front-page-wrapper-bottom" className="front-page-items-wrapper">
-                    <FrontPageItem item={item4} />
-                    <FrontPageItem item={item5} />
-                    <FrontPageItem item={item6} />
+                <div className="front-page-items-container">
+                    <FrontPageItem item={items[4]} />
+                    <FrontPageItem item={items[5]} />
+                    <FrontPageItem item={items[6]} />
+                    <FrontPageItem item={items[7]} />
                 </div>
+                <div className="front-page-items-container">
+                    <FrontPageItem item={items[8]} />
+                    <FrontPageItem item={items[9]} />
+                    <FrontPageItem item={items[10]} />
+                    <FrontPageItem item={items[11]} />
+                </div>
+                <div className="front-page-items-container">
+                    <FrontPageItem item={items[12]} />
+                    <FrontPageItem item={items[13]} />
+                    <FrontPageItem item={items[14]} />
+                    <FrontPageItem item={items[15]} />
+                </div>
+                <div className="front-page-items-container">
+                    <FrontPageItem item={items[16]} />
+                    <FrontPageItem item={items[17]} />
+                    <FrontPageItem item={items[18]} />
+                    <FrontPageItem item={items[19]} />
+                </div>
+                <div className="front-page-items-container">
+                    <FrontPageItem item={items[20]} />
+                    <FrontPageItem item={items[21]} />
+                    <FrontPageItem item={items[22]} />
+                    <FrontPageItem item={items[23]} />
+                </div>
+            </div>
         </div>
     )
 }

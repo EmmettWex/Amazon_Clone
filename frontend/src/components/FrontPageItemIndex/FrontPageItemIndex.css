@@ -3,8 +3,7 @@
 .front-page-index-wrapper {
     min-width: 1000px;
     width: 100%;
-    min-height: 720px;
-    background-color: rgb(254, 217, 217);
+    background-color: #E3E6E6;
     /* background-image:
         linear-gradient(to bottom,
             #fff8dc,
@@ -14,24 +13,62 @@
 
 .GE-image {
     width: 100%;
+    height: 270px;
+    z-index: -1;
 }
 
-.GE-image > img {
+.front-page-image-mask {
+    -webkit-mask-image: linear-gradient(to bottom,
+        #000,
+        #000,
+        #000,
+        rgba(0,0,0,0));
+    mask-image: linear-gradient(to bottom, 
+        #000,
+        #000,
+        #000,
+        rgba(0, 0, 0, 0));
+}
+
+.front-page-image-mask > img {
     width: 100%;
 }
 
-.front-page-items-wrapper {
-    max-width: 100%;
-    height: 100%;
-    padding: 20px;
+.front-page-items-container {
+    z-index: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    min-width: 265px;
+    max-width: 345px;
+    width: calc(30.5% - 40px);
+    height: 340px;
+    padding: 10px;
+    background-color: rgba(255,255,255,1);
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
+.front-page-items-wrapper {
+    background-color: transparent;
+    min-width: calc(1000px - 40px);
+    max-width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .front-page-item-wrapper {
-    min-width: 250px;
-    padding: 20px;
+    min-width: 126px;
+    max-width: 166px;
+    width: calc(45% - 4px);
+    height: 166px;
+    padding: 2px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -39,17 +76,16 @@
 }
 
 .front-page-img-placeholder {
-    width: 100%;
-    height: 250px;
-    margin-bottom: 20px;
+    height: 90%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .front-page-item-name {
-    font-size: 20px;
-
+    font-size: 13px;
+    
 }
 
 #link-to-item-show:hover {
@@ -64,6 +100,7 @@
     padding-top: 10px;
 }
 
-.front-page-image {
-    height: 100%;
+.front-page-item-image {
+    max-height: 90%;
+    max-width: 95%;
 }
