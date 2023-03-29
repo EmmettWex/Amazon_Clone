@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getReviews, fetchReviews } from '../../store/review';
+import { getReviews, fetchReviews, deleteReview } from '../../store/review';
 import './ItemReviews.css';
 import pfp from '../../assets/images/osrzonpfp.jpg';
 import emptyStar from '../../assets/images/empty_star.png';
@@ -128,6 +128,17 @@ const ItemReviews = ({id}) => {
                                 </div>
                                 <span className="item-reviews-section-right-created">Reviewed in Gielinor on {convertDate(review.createdAt)}</span>
                                 <span className="item-reviews-section-right-description">{review.description}</span>
+                                {
+                                    user.id === review.authorId ?
+                                        <div className="item-reviews-update-edit">
+                                            <button className="item-reviews-edit-button" onClick={e => {
+                                                history.push(`/items/${review.itemId}/updateReview/${review.id}`)
+                                            }}>Edit Review</button>
+                                            <div className="item-reviews-update-edit-content-divider" />
+                                            <span className="item-reviews-delete" onClick={e => {
+                                                dispatch(deleteReview(review.id))}}>delete</span>
+                                        </div> : null
+                                }
                             </div>
                         })
                     }

@@ -26,8 +26,8 @@ const removeReview = reviewId => {
 }
 
 export const getReview = reviewId => state => {
-    if (state.review) {
-        return state.review[reviewId];
+    if (state.reviews) {
+        return state.reviews[reviewId];
     } else {
         return null;
     }
@@ -70,7 +70,7 @@ export const addReview = (review, history) => async dispatch => {
     if (response.ok) {
         const data = await response.json();
         dispatch(receiveReview(data));
-        history.push(`/items/${review.item_id}`)
+        history.push(`/items/${review.item_id}`);
         return response;
     }
 }
@@ -86,7 +86,7 @@ export const deleteReview = reviewId => async dispatch => {
     }
 }
 
-export const updateReview = review => async dispatch => {
+export const updateReview = (review, history) => async dispatch => {
     const response = await csrfFetch(`/api/reviews/${review.id}`, {
         method: 'PATCH',
         body: JSON.stringify(review)
@@ -95,6 +95,7 @@ export const updateReview = review => async dispatch => {
     if (response.ok) {
         const data = await response.json();
         dispatch(receiveReview(data));
+        history.push(`/items/${review.item_id}`);
         return response;
     }
 }

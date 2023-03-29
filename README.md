@@ -29,3 +29,8 @@ OSRZon is an Amazon clone that allows you to shop for items from the classic MMO
         * Add items to their shopping cart.
         * Remove or update items in their cart.
         * Checkout items from their cart.
+* Product Reviews:
+    * OSRZon allows the user to write customer reviews of products on the website
+        * Write new product reviews
+        * Edit your existing reviews
+        * Delete your existing reviews

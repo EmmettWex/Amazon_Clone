@@ -1,0 +1,218 @@
+.review-update-form-change-name {
+    font-size: 14px;
+    color: #007185;
+}
+
+.review-update-form-change-name:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #da7b00;
+}
+
+.review-update-form-main-content-wrapper {
+    min-width: 770px;
+    max-width: 770px;
+    margin-top: 20px;
+}
+
+.review-update-form-main-wrapper {
+    min-width: 770px;
+    display: flex;
+    justify-content: center;
+}
+
+.review-update-name-change-input {
+    height: 21px;
+    padding: 3px 7px;
+}
+
+.review-update-name-content-wrapper {
+    min-width: 742px;
+    max-width: 742px;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.review-update-form-name-change-wrapper {
+    height: 54px;
+    min-width: 770px;
+    background-color: #DEFAFF;
+    display: flex;
+    justify-content: center;
+}
+
+.review-update-form-cancel-button {
+    margin-left: 5px;
+    width: 63px;
+    height: 29px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+}
+
+.review-update-form-cancel-button:hover {
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.review-update-form-cancel-button:active {
+    border: 1.5px solid #ffffff;
+    outline: 1.5px solid rgb(131, 131, 255);
+    box-shadow: 0 0 10px rgb(193, 193, 193);
+}
+
+.review-update-form-save-button {
+    margin-left: 5px;
+    width: 63px;
+    height: 29px;
+    border-radius: 4px;
+    background-color: #ffd814;
+    border: 1px solid #FFD814;
+}
+
+.review-update-form-save-button:hover {
+    background-color: #f0cc16;
+    cursor: pointer;
+}
+
+.review-update-form-save-button:active {
+    background-color: #e5c216;
+    border: 1.5px solid #ffffff;
+    outline: 1.5px solid rgb(131, 131, 255);
+    box-shadow: 0 0 10px rgb(193, 193, 193);
+}
+
+.review-update-title-item-subsection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.review-update-form-wrapper {
+    background-color: white;
+}
+
+.review-update-title-wrapper {
+    margin-top: 18px;
+    margin-bottom: 20px;
+    margin-left: 14px;
+    margin-right: 14px;
+    width: calc(100% - 28px);
+    display: flex;
+    flex-direction: column;
+}
+
+.review-update-title-wrapper>h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.review-update-userName {
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+.review-update-form-title-image {
+    width: 62px;
+    height: 62px;
+}
+
+.review-update-form-title-item-name {
+    margin-left: 10px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.review-update-form-content-divider {
+    width: calc(100% - 28px);
+    border-top: 1px solid #d5d5d5;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.review-update-sub-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 17px;
+}
+
+.review-update-star-ratings {
+    display: flex;
+    flex-direction: row;
+}
+
+.review-update-ratings-top-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.review-update-clear-ratings {
+    font-size: 13px;
+    color: #007185;
+    margin-right: 12px;
+    margin-top: 3px;
+}
+
+.review-update-clear-ratings:hover {
+    cursor: pointer;
+}
+
+.review-update-rating-stars {
+    width: 35px;
+}
+
+.review-update-rating-stars:hover {
+    cursor: pointer;
+}
+
+.review-update-headline-textbox {
+    height: 31px;
+    padding-left: 6px;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 4px;
+}
+
+.review-update-headline-textbox:focus {
+    border: 1px solid #F08804;
+    box-shadow: 0 0 5px #7e4a05;
+}
+
+.review-update-description {
+    min-width: 730px;
+    max-width: 730px;
+    height: 105px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.review-update-submit-button {
+    margin-left: 5px;
+    width: 63px;
+    height: 29px;
+    border-radius: 4px;
+    background-color: #ffd814;
+    border: 1px solid #FFD814;
+    align-self: flex-end;
+}
+
+.review-update-submit-button:hover {
+    background-color: #f0cc16;
+    cursor: pointer;
+}
+
+.review-update-submit-button:active {
+    background-color: #e5c216;
+    border: 1.5px solid #ffffff;
+    outline: 1.5px solid rgb(131, 131, 255);
+    box-shadow: 0 0 10px rgb(193, 193, 193);
+}
+
+.update-review-errors {
+    margin-top: 14px;
+    font-size: 14px;
+    color: #C40000;
+}

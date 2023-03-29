@@ -7,6 +7,7 @@ import * as itemsActions from '../../store/items';
 import CartIndex from '../Cart';
 import ItemIndex from '../ItemIndex';
 import CreateReviewForm from '../CreateReviewForm';
+import UpdateReviewForm from '../UpdateReviewForm';
 import Footer from '../Footer'
 
 const SplashPage = () => {
@@ -23,6 +24,9 @@ const SplashPage = () => {
                 </Route>
                 <Route path="/items/:id/createReview">
                     <CreateReviewForm />
+                </Route>
+                <Route path="/items/:itemId/updateReview/:reviewId">
+                    <UpdateReviewForm />
                 </Route>
                 <Route path="/items/:id">
                     <ItemShowPage />

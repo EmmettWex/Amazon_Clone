@@ -128,3 +128,46 @@
     margin-left: 10px;
     font-size: 18px;
 }
+
+.item-reviews-update-edit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 13px;
+}
+
+.item-reviews-edit-button {
+    height: 29px;
+    width: 98px;
+    border-radius: 6px;
+    border: 1px solid #dddddd;
+    background-color: transparent;
+    box-shadow: 0 0 5px #dddddd;
+    font-size: 13px;
+}
+
+.item-reviews-edit-button:hover {
+    cursor: pointer;
+    background-color: #f7f7f7;
+}
+
+.item-reviews-edit-button:active {
+    background-color: rgb(227, 248, 255);
+    box-shadow: 0 0 5px rgb(227, 248, 255);
+}
+
+.item-reviews-update-edit-content-divider {
+    margin-left: 14px;
+    margin-right: 14px;
+    height: 14px;
+    border-left: 1px solid #dddddd;
+}
+
+.item-reviews-delete {
+    font-size: 14px;
+    color: #565959;
+}
+
+.item-reviews-delete:hover {
+    cursor: pointer;
+}
