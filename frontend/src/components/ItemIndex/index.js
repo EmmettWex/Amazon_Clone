@@ -17,10 +17,10 @@ const ItemIndex = () => {
     if (!items[0]) {
         return (
             <div className="item-index-wrapper">
-                <div className="no-search-made">
+                {/* <div className="no-search-made">
                     <p>Please search using the search bar</p>
                     <p>There are no items to be found here</p>
-                </div>
+                </div> */}
             </div>
         )
     }
