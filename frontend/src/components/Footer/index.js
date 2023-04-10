@@ -15,27 +15,19 @@ const Footer = () => {
             </div>
             <div className="footer-section-2">
                 <div className="footer-section-2-content-wrapper">
-                    <h1>Get to know me</h1>
-                    <a className="footer-personal-links" href="https://github.com/EmmettWex" target="_blank">Github</a>
-                    <a className="footer-personal-links" href="https://www.linkedin.com/in/emmett-wechsler-3477a9266/" target="_blank">LinkedIn</a>
+                    <h1><a className="footer-personal-links" href="https://github.com/EmmettWex" target="_blank">Github</a></h1>
                 </div>
                 <div className="footer-section-2-content-divider"/>
                 <div className="footer-section-2-content-wrapper">
-                    <h1>Get to know me</h1>
-                    <a className="footer-personal-links" href="https://github.com/EmmettWex" target="_blank">Github</a>
-                    <a className="footer-personal-links" href="https://www.linkedin.com/in/emmett-wechsler-3477a9266/" target="_blank">LinkedIn</a>
+                    <h1><a className="footer-personal-links" href="https://www.linkedin.com/in/emmett-wechsler-3477a9266/" target="_blank">LinkedIn</a></h1>
                 </div>
                 <div className="footer-section-2-content-divider" />
                 <div className="footer-section-2-content-wrapper">
-                    <h1>Get to know me</h1>
-                    <a className="footer-personal-links" href="https://github.com/EmmettWex" target="_blank">Github</a>
-                    <a className="footer-personal-links" href="https://www.linkedin.com/in/emmett-wechsler-3477a9266/" target="_blank">LinkedIn</a>
+                    <h1><a className="footer-personal-links" href="https://wellfound.com/u/emmett-wechsler" target="_blank">Wellfound</a></h1>
                 </div>
                 <div className="footer-section-2-content-divider" />
                 <div className="footer-section-2-content-wrapper">
-                    <h1>Get to know me</h1>
-                    <a className="footer-personal-links" href="https://github.com/EmmettWex" target="_blank">Github</a>
-                    <a className="footer-personal-links" href="https://www.linkedin.com/in/emmett-wechsler-3477a9266/" target="_blank">LinkedIn</a>
+                    <h1><a className="footer-personal-links" href="https://github.com/EmmettWex" target="_blank">Portfolio</a></h1>
                 </div>
             </div>
             <div className="footer-section-3">
