@@ -27,7 +27,7 @@ const Footer = () => {
                 </div>
                 <div className="footer-section-2-content-divider" />
                 <div className="footer-section-2-content-wrapper">
-                    <h1><a className="footer-personal-links" href="https://github.com/EmmettWex" target="_blank">Portfolio</a></h1>
+                    <h1><a className="footer-personal-links" href="https://emmettw.dev/" target="_blank">Portfolio</a></h1>
                 </div>
             </div>
             <div className="footer-section-3">
